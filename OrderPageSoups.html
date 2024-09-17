@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soups Order Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5e7; /* Soft beige background */
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
+        header {
+            background: #8a2be2; /* Deep purple header */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .order-page {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .form-section input {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+        }
+        .category-title {
+            background-color: #ff6f61; /* Warm orange for categories */
+            color: white;
+            padding: 12px;
+            font-size: 22px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .menu-item .item-name {
+            flex: 1; /* Makes item-name take more space */
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .menu-item .item-price {
+            width: 100px; /* Fixed width for price */
+            text-align: right;
+            color: #6b3a3a;
+            font-weight: bold;
+        }
+        .menu-item input {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+        }
+        .summary {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .total-amount {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4b0082; /* Deep purple for total amount */
+        }
+        .order-button {
+            width: 100%;
+            background-color: #8a2be2;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .order-button:hover {
+            background-color: #6c1bbf;
+        }
+        .back-button {
+            width: 100%;
+            background-color: #a1a1a1;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #828282;
+        }
+        .thank-you {
+            text-align: center;
+            padding: 10px;
+            color: #4b0082;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Order Your Favorite Soup</h1>
+</header>
+
+<div class="container">
+    <div class="order-page">
+        <!-- Contact Information -->
+        <div class="form-section">
+            <h2>Contact Information</h2>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="text" id="address" placeholder="Your Address">
+            <input type="text" id="contact" placeholder="Contact Number">
+        </div>
+
+        <!-- Classic Soups Category -->
+        <div class="category-title">Classic Soups</div>
+        <div id="menu-items-classic"></div>
+
+        <!-- Creamy Soups Category -->
+        <div class="category-title">Creamy Soups</div>
+        <div id="menu-items-creamy"></div>
+
+        <!-- Order Summary -->
+        <div class="summary">
+            <h3>Order Summary</h3>
+            <div id="summary-items"></div>
+            <div class="summary-item">
+                <strong>Total:</strong> 
+                <span class="total-amount" id="total-amount">₹0</span>
+            </div>
+        </div>
+
+        <!-- Order and Back Buttons -->
+        <button class="order-button" onclick="placeOrder()">Place Order</button>
+        <a class="back-button" target="_blank"
+        href="Soups(FOWR).html">Back to Menu</a>
+    </div>
+</div>
+
+<div class="thank-you">
+    Thank you for choosing our soups!
+</div>
+
+<script>
+    const classicSoups = [
+        { name: 'Chicken Noodle Soup', price: 250 },
+        { name: 'Tomato Basil Soup', price: 200 },
+        { name: 'Minestrone', price: 220 },
+        { name: 'Vegetable Soup', price: 180 },
+        { name: 'Beef Barley Soup', price: 270 },
+        { name: 'Lentil Soup', price: 200 }
+    ];
+
+    const creamySoups = [
+        { name: 'Cream of Mushroom', price: 250 },
+        { name: 'New England Clam Chowder', price: 300 },
+        { name: 'Potato Leek Soup', price: 250 },
+        { name: 'Butternut Squash Soup', price: 270 },
+        { name: 'Lobster Bisque', price: 350 },
+        { name: 'Cream of Asparagus', price: 280 }
+    ];
+
+    function renderMenu(items, containerId) {
+        const menuContainer = document.getElementById(containerId);
+        menuContainer.innerHTML = items.map((item, index) => `
+            <div class="menu-item">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price">₹${item.price}</div>
+                <div class="item-quantity">
+                    <input type="number" id="${containerId}-quantity-${index}" min="0" value="0" onchange="updateSummary()">
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function updateSummary() {
+        const summaryContainer = document.getElementById('summary-items');
+        const totalAmountElement = document.getElementById('total-amount');
+        let totalAmount = 0;
+
+        summaryContainer.innerHTML = [
+            ...classicSoups.map((item, index) => getSummaryItem(item, `menu-items-classic-quantity-${index}`)),
+            ...creamySoups.map((item, index) => getSummaryItem(item, `menu-items-creamy-quantity-${index}`))
+        ].join('');
+
+        function getSummaryItem(item, id) {
+            const quantity = parseInt(document.getElementById(id).value, 10);
+            if (quantity > 0) {
+                const itemTotal = item.price * quantity;
+                totalAmount += itemTotal;
+                return `
+                    <div class="summary-item">
+                        <span>${item.name}</span>
+                        <span>₹${itemTotal} (${quantity} x ₹${item.price})</span>
+                    </div>
+                `;
+            }
+            return '';
+        }
+
+        totalAmountElement.textContent = `₹${totalAmount}`;
+    }
+
+    function placeOrder() {
+        alert('Order placed successfully!');
+    }
+
+    // Initialize the menu
+    renderMenu(classicSoups, 'menu-items-classic');
+    renderMenu(creamySoups, 'menu-items-creamy');
+</script>
+
+</body>
+</html>

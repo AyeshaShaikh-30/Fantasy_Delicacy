@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Course Menu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+html{
+    scroll-behavior: smooth;
+}
+        /* Hero Section */
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 6px rgba(11, 11, 11, 0.7);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .navbar a:hover {
+            background-color: #ff6f61;
+            border-radius: 5px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .dish-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .dish-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .dish-card:hover {
+            transform: scale(1.05);
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .dish-card .dish-info {
+            padding: 20px;
+        }
+
+        .dish-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .dish-card p {
+            margin: 0;
+            color: #777;
+        }
+
+        .dish-card .price {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #f61702;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+
+
+.button {
+    width: 100vw;
+    margin: 40px 0;
+    position: relative; 
+    
+    left:-50%;
+    transform: translateX(-17%); 
+}
+
+
+.btn-order {
+    background-color:#333; 
+    color: white;
+    padding: 12px 0; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block; 
+        transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    text-align: center; 
+}
+
+.btn-order:hover{
+    background-color:#060606;
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Discover Our Main Course Selections</h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#vegetarian">Vegetarian</a>
+        <a href="#non-vegetarian">Non-Vegetarian</a>
+        <a href="#chefs-special">Chef's Special</a>
+    </div>
+
+    <!-- Vegetarian Section -->
+    <section class="section" id="vegetarian">
+        <h2>Vegetarian Dishes</h2>
+        <div class="dish-grid">
+            <div class="dish-card">
+                <img src="paneerbuttermasala.jpg" alt="Paneer Butter Masala">
+                <div class="dish-info">
+                    <h3>Paneer Butter Masala</h3>
+                    <p>A creamy and rich dish made with soft paneer in a spiced tomato sauce.</p>
+                    <div class="price">₹600</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="vegbiryani.jpg" alt="Veg Biryani">
+                <div class="dish-info">
+                    <h3>Veg Biryani</h3>
+                    <p>Fragrant basmati rice cooked with fresh vegetables and aromatic spices.</p>
+                    <div class="price">₹400</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="daalmakhni.jpg" alt="Dal Makhani">
+                <div class="dish-info">
+                    <h3>Dal Makhani</h3>
+                    <p>Black lentils cooked slowly in a rich, creamy sauce with spices.</p>
+                    <div class="price">₹350</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="malaikofta.jpg" alt="Malai Kofta">
+                <div class="dish-info">
+                    <h3>Malai Kofta</h3>
+                    <p>Fried dumplings in a rich, creamy tomato-based curry.</p>
+                    <div class="price">₹550</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="palakpaneer.jpg" alt="Palak Paneer">
+                <div class="dish-info">
+                    <h3>Palak Paneer</h3>
+                    <p>Soft paneer cubes cooked in a spiced spinach gravy.</p>
+                    <div class="price">₹450</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="aaloo gobi.jpg" alt="Aloo Gobi">
+                <div class="dish-info">
+                    <h3>Aloo Gobi</h3>
+                    <p>A flavorful dry curry made with potatoes and cauliflower.</p>
+                    <div class="price">₹350</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="baiganbharta.jpg" alt="Baingan Bharta">
+                <div class="dish-info">
+                    <h3>Baingan Bharta</h3>
+                    <p>Roasted eggplant mashed and cooked with spices and onions.</p>
+                    <div class="price">₹250</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="chole bhature.jpg" alt="Chole Bhature">
+                <div class="dish-info">
+                    <h3>Chole Bhature</h3>
+                    <p>Spicy chickpea curry served with fluffy deep-fried bread.</p>
+                    <div class="price">₹250</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="vegetable korma.jpg" alt="Vegetable Korma">
+                <div class="dish-info">
+                    <h3>Vegetable Korma</h3>
+                    <p>Mixed vegetables cooked in a creamy, spiced coconut sauce.</p>
+                    <div class="price">₹450</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="daalchawal.jpg"
+                 alt="daal chawal">
+                <div class="dish-info">
+            <h3>Exclusive Daal Chawal</h3>
+    <p>A comforting combination of spiced lentil soup 
+        and fragrant basmati rice.</p>
+        <div class="price">₹400</div>
+                </div>
+            </div>
+            <div class="dish-card">
+    <img src="food2.jpg" alt="Giant Veg Beast">
+                <div class="dish-info">
+            <h3>Giant Veg Beast</h3>
+        <p>Steamed Basmati rice, Whole wheat Chapati, 
+            Paneer Curry, Mix Veg sabzi.</p>
+            <div class="price"> ₹1600 (Large)
+                <br> ₹900 (Medium)</div>
+            
+                </div>
+                </div>
+
+                <div class="dish-card">
+    <img src="chanamasala.jpg" alt="Chana Masala">
+                    <div class="dish-info">
+            <h3>Chana Masala</h3>
+<p>Chana Masala features tender chickpeas 
+    simmered in a rich, spiced tomato sauce served 
+    along with tandoori roti.
+     </p>      
+     <div class="price">₹600</div>  
+</div>
+         </div>
+
+         
+    <div class="button">
+    <a href="OrderPageMainCourse.html" class="btn-order" target="_blank">
+        Order from Vegetarian Dishes</a>
+            </div>
+        
+        
+        
+    </section>
+
+    <!-- Non-Vegetarian Section -->
+    <section class="section" id="non-vegetarian">
+        <h2>Non-Vegetarian Dishes</h2>
+        <div class="dish-grid">
+            <div class="dish-card">
+                <img src="chickentikkamasala.jpg"Chicken Tikka Masala">
+                <div class="dish-info">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Grilled chicken simmered in a rich, creamy tomato sauce with spices.</p>
+                    <div class="price">₹450</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="muttonbiryani.jpg" alt="Mutton Biryani">
+                <div class="dish-info">
+                    <h3>Mutton Biryani</h3>
+                    <p>Fragrant rice dish with tender mutton and aromatic spices.</p>
+                    <div class="price">₹750</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="butterchicken.jpg"Butter Chicken">
+                <div class="dish-info">
+                    <h3>Butter Chicken</h3>
+                    <p>Rich and creamy chicken curry with a hint of butter and spices.</p>
+                    <div class="price">₹450</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="fishcurry.jpg" alt="Fish Curry">
+                <div class="dish-info">
+                    <h3>Fish Curry</h3>
+                    <p>Fish cooked in a spicy and tangy curry sauce.</p>
+                    <div class="price">₹600</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="prawn masala.jpg" alt="Prawn Masala">
+                <div class="dish-info">
+                    <h3>Prawn Masala</h3>
+                    <p>Juicy prawns cooked in a flavorful masala sauce.</p>
+                    <div class="price">₹600</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="chicken korma.jpg" alt="Chicken Korma">
+                <div class="dish-info">
+                    <h3>Chicken Korma</h3>
+                    <p>Chicken cooked in a rich, creamy sauce with nuts and spices.</p>
+                    <div class="price">₹500</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="rogan gosh.jpg" alt="Rogan Josh">
+                <div class="dish-info">
+                    <h3>Rogan Josh</h3>
+                    <p>Spicy and aromatic lamb curry with a rich gravy.</p>
+                    <div class="price">₹700</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="tandoori chicken.jpg" alt="Tandoori Chicken">
+                <div class="dish-info">
+                    <h3>Tandoori Chicken</h3>
+                    <p>Marinated chicken grilled to perfection in a tandoor.</p>
+                    <div class="price">₹800</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="lambcurry.jpg" alt="Lamb Curry">
+                <div class="dish-info">
+                    <h3>Lamb Curry</h3>
+                    <p>Tender lamb pieces cooked in a spicy curry sauce.</p>
+                    <div class="price">₹650</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="chicken65.jpg" 
+                alt="Chicken 65">
+                <div class="dish-info">
+                    <h3>Chicken 65</h3>
+                    <p>Spicy, deep-fried chicken pieces with a crispy coating.</p>
+                    <div class="price">₹500</div>
+                </div>
+            </div>
+            <div class="dish-card">
+        <img src="chicken food.jpg" alt="Roasted Chicken Combo">
+                            <div class="dish-info">
+                        <h3>Roasted Chicken Combo</h3>
+            <p>Chicken is roasted and prepared with a rich gravy
+                served with Naan and side dishes.</p>
+            <div class="price"> ₹1200 (Large)
+                 <br> ₹800 (Half)
+                        </div>
+                            </div>
+        </div>
+        <div class="dish-card">
+    <img src="Spicy Chettinad Chicken.jpg"
+     alt="Spicy Chettinad Chicken">
+            <div class="dish-info">
+                <h3>Spicy Chettinad Chicken</h3>
+                <p>Succulent chicken cooked in a fiery
+                     blend of authentic Chettinad spices and herbs.
+                      </p>
+                <div class="price">₹800</div>
+            </div>
+        </div>
+
+        <div class="button">
+            <a href="OrderPageMainCourseN.html" class="btn-order" target="_blank">
+                Order from Non-Vegetarian Dishes</a>
+        </div>
+
+
+    </section>
+
+    <!-- Chef's Special Section -->
+    <section class="section" id="chefs-special">
+        <h2>Chef's Special Dishes</h2>
+        <div class="dish-grid">
+            <div class="dish-card">
+                <img src="lambrogangosh.jpg" 
+                alt="Lamb Rogan Josh">
+                <div class="dish-info">
+                    <h3>Lamb Rogan Josh</h3>
+                    <p>Tender lamb cooked with aromatic spices in a flavorful gravy.</p>
+                    <div class="price">₹800</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="garlicbutterlobster.jpg" 
+                alt="Garlic Butter Lobster">
+                <div class="dish-info">
+                    <h3>Garlic Butter Lobster</h3>
+                    <p>Succulent lobster cooked in a rich garlic butter sauce.</p>
+                    <div class="price">₹1200</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="duck confit.jpg"
+                 alt="Duck Confit">
+                <div class="dish-info">
+                    <h3>Duck Confit</h3>
+                    <p>Slow-cooked duck leg with crispy skin and a savory glaze.</p>
+                    <div class="price">₹900</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Beef Wellington.jpg" 
+                alt="Beef Wellington">
+                <div class="dish-info">
+                    <h3>Beef Wellington</h3>
+                    <p>Beef tenderloin wrapped in puff pastry with a mushroom duxelles.</p>
+                    <div class="price">₹500</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Stuffed Chicken Breast.jpg" 
+                alt="Stuffed Chicken Breast">
+                <div class="dish-info">
+                    <h3>Stuffed Chicken Breast</h3>
+                    <p>Chicken breast stuffed with cheese and herbs, served with a rich sauce.</p>
+                    <div class="price">₹600</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Grilled Salmon.jpg" alt="Grilled Salmon">
+                <div class="dish-info">
+                    <h3>Grilled Salmon</h3>
+                    <p>Salmon fillet grilled to perfection, served with a lemon butter sauce.</p>
+                    <div class="price">₹700</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Baked Ziti.jpg"
+                 alt="Baked Ziti">
+                <div class="dish-info">
+                    <h3>Baked Ziti</h3>
+                    <p>Pasta baked with marinara sauce and melted cheese.</p>
+                    <div class="price">₹800</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Herb-Crusted Lamb Chops.jpg"
+                 alt="Herb-Crusted Lamb Chops">
+                <div class="dish-info">
+                    <h3>Herb-Crusted Lamb Chops</h3>
+                    <p>Lamb chops with a crispy herb crust, served with a mint sauce.</p>
+                    <div class="price">₹1200</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Saffron Risotto.jpg" alt="Saffron Risotto">
+                <div class="dish-info">
+                    <h3>Saffron Risotto</h3>
+                    <p>Rich and creamy risotto flavored with saffron.</p>
+                    <div class="price">₹1200</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="Truffle Mushroom Pasta.jpg"
+                 alt="Truffle Mushroom Pasta">
+                <div class="dish-info">
+                    <h3>Truffle Mushroom Pasta</h3>
+                    <p>Rich pasta dish with truffle oil and sautéed mushrooms.</p>
+                    <div class="price">₹1000</div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+    <img src="spaghetti.jpg" 
+    alt="Spaghetti Bolognese">
+        <div class="dish-info">
+            <h3>Spaghetti Bolognese</h3>
+    <p>Classic Italian pasta dish with rich meat sauce,
+        topped with parmesan cheese.</p>
+            <div class="price">₹700</div>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <img src="italian pizza.jpg" 
+                alt="Italian Style Pizza">
+                    <div class="dish-info">
+            <h3>Delicious Italian Style Pizza</h3>
+<p>Pizza prepared with fresh tomatoes,
+    capsicum and more.</p>
+            <div class="price">₹600</div>
+                            </div>
+                        </div>
+            
+            <div class="button">
+<a href="OrderPageMaincourseC.html" 
+class="btn-order" target="_blank">
+    Order from Chefs Special Dishes</a>
+        </div>
+
+        
+                        
+                     
+        
+       </section>
+       
+        
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Enjoy our delightful main courses, freshly prepared just for you!</p>
+    </footer>
+
+</body>
+</html>

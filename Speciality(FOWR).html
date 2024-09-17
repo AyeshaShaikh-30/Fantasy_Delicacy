@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialty Cuisines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #f8f9fa;
+        }
+        .browse-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .browse-button:hover {
+            background-color: #0056b3;
+        }
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .hero-section h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .hero-section p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        main {
+            padding: 20px;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .category h2 {
+            font-size: 2rem;
+            color: #343a40;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .cuisine-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .cuisine-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            width: calc(20% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .cuisine-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .cuisine-item h3 {
+            margin: 10px 0;
+            font-size: 1.25rem;
+            color: #343a40;
+        }
+        .cuisine-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+        footer {
+            background-color: #343a40;
+            padding: 20px;
+            text-align: center;
+        }
+        .order-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .order-button:hover {
+            background-color: #0056b3;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+        .browse-button,.order-button{
+            text-decoration: none;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero-section" id="batman">
+            <h2>Discover Specialty Cuisines</h2>
+            <p>Explore international flavors from around the world. Indulge in delicious dishes that will take your taste buds on a global adventure.</p>
+        </div>
+        <div class="sticky-header">
+            <a href="#italian" class="browse-button">
+                Browse Cuisines</a>
+            </div>
+        <h1>Specialty Cuisines</h1>
+    </header>
+    <main>
+        <section class="category" id="italian">
+            <h2>Italian</h2>
+            <div class="cuisine-container">
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Pizza.jpg" alt="Pizza"></a>
+                    <h3>Pizza</h3>
+                    <p>₹500</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="lasagna.jpg" alt="Lasagna"></a>
+                    <h3>Lasagna</h3>
+                    <p>₹600</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Ravioli.jpg" alt="Ravioli"></a>
+                    <h3>Ravioli</h3>
+                    <p>₹550</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Gnocchi.jpg" alt="Gnocchi"></a>
+                    <h3>Gnocchi</h3>
+                    <p>₹500</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="spaghetti.jpg" alt="Spaghetti"></a>
+                    <h3>Spaghetti</h3>
+                    <p>₹450</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="mexican">
+            <h2>Mexican</h2>
+            <div class="cuisine-container">
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="tacos2.jpg" alt="Tacos"></a>
+                    <h3>Tacos</h3>
+                    <p>₹350</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="burritos.jpg" alt="Burrito"></a>
+                    <h3>Burrito</h3>
+                    <p>₹400</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Enchiladas.jpg" alt="Enchiladas"></a>
+                    <h3>Enchiladas</h3>
+                    <p>₹450</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Quesadilla.jpg" alt="Quesadilla"></a>
+                    <h3>Quesadilla</h3>
+                    <p>₹400</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Churros.jpg" alt="Churros"></a>
+                    <h3>Churros</h3>
+                    <p>₹300</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="indian">
+            <h2>Indian</h2>
+            <div class="cuisine-container">
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="muttonbiryani.jpg" alt="Biryani"></a>
+                    <h3>Biryani</h3>
+                    <p>₹450</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="butterchicken.jpg" alt="Butter Chicken"></a>
+                    <h3>Butter Chicken</h3>
+                    <p>₹500</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="palakpaneer.jpg" alt="Palak Paneer"></a>
+                    <h3>Palak Paneer</h3>
+                    <p>₹400</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="dosa.jpg" alt="Dosa"></a>
+                    <h3>Dosa</h3>
+                    <p>₹350</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="samosa.jpg" alt="Samosa"></a>
+                    <h3>Samosa</h3>
+                    <p>₹150</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="thai">
+            <h2>Thai</h2>
+            <div class="cuisine-container">
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="pad thai.jpg" alt="Pad Thai"></a>
+                    <h3>Pad Thai</h3>
+                    <p>₹500</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="green curry.jpg" alt="Green Curry"></a>
+                    <h3>Green Curry</h3>
+                    <p>₹600</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="springrolls.jpg" alt="Spring Rolls"></a>
+                    <h3>Spring Rolls</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="larb.jpg" alt="Larb"></a>
+                    <h3>Larb</h3>
+                    <p>₹450</p>
+                </div>
+                <div class="cuisine-item">
+                    <a href="#">
+                        <img src="Tom Yum.jpg" alt="Tom Yum"></a>
+                    <h3>Tom Yum</h3>
+                    <p>₹500</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="OrderPageSpecialitycuisines.html" class="order-button">
+            Order Now</a>
+    </footer>
+</body>
+</html>

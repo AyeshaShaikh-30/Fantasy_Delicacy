@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks & Sides Order Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 8px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .order-page {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #003366;
+            font-size: 24px;
+        }
+        .form-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 10px 0;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            font-size: 18px;
+            color: #333;
+            flex: 2;
+        }
+        .item-price {
+            font-size: 18px;
+            color: #003366;
+            text-align: right;
+            flex: 1;
+        }
+        .item-quantity {
+            flex: 1;
+            text-align: right;
+        }
+        .item-quantity input {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .summary {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .order-button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: #001a33;
+        }
+        .back-button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #ccc;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        .thank-you {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Snacks & Sides</h1>
+    </header>
+
+    <div class="container">
+        <div class="order-page">
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="text" id="address" placeholder="Your Address">
+                <input type="text" id="contact" placeholder="Contact Number">
+            </div>
+
+            <h2>Snacks & Sides</h2>
+            <div id="menu-items"></div>
+
+            <div class="summary">
+                <h3>Order Summary</h3>
+                <div id="summary-items"></div>
+                <div class="summary-item">
+                    <strong>Total:</strong> 
+                    <span id="total-amount">₹0</span>
+                </div>
+            </div>
+
+            <button class="order-button" onclick="placeOrder()">Place Order</button>
+            <a class="back-button" target="_blank"
+            href="SnacksSides(FOWR).html">Back to Menu</a>
+        </div>
+    </div>
+
+    <div class="thank-you">
+        Thank you for choosing us!
+    </div>
+
+    <script>
+        const items = [
+            { name: 'Pakora', price: 150 },
+            { name: 'Samosa', price: 120 },
+            { name: 'Spring Rolls', price: 180 },
+            { name: 'Chicken Wings', price: 250 },
+            { name: 'Nachos', price: 200 },
+            { name: 'Cheese Sticks', price: 220 },
+            { name: 'Potato Wedges', price: 160 },
+            { name: 'Garlic Bread', price: 180 },
+            { name: 'Loaded Fries', price: 240 },
+            { name: 'Onion Rings', price: 160 },
+            { name: 'Vegetable Samosa', price: 120 },
+            { name: 'Chili Cheese Dip', price: 180 },
+            { name: 'Sweet Potato Fries', price: 200 },
+            { name: 'Vegetable Spring Rolls', price: 180 },
+            { name: 'Fried Calamari', price: 300 },
+            { name: 'Mutton Kebab', price: 350 }
+        ];
+
+        function renderMenu() {
+            const menuContainer = document.getElementById('menu-items');
+            menuContainer.innerHTML = items.map((item, index) => `
+                <div class="item">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-price">₹${item.price}</div>
+                    <div class="item-quantity">
+                        <input type="number" id="quantity-${index}" min="0" value="0" onchange="updateSummary()">
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateSummary() {
+            const summaryContainer = document.getElementById('summary-items');
+            const totalAmountElement = document.getElementById('total-amount');
+            let totalAmount = 0;
+
+            summaryContainer.innerHTML = items.map((item, index) => {
+                const quantity = parseInt(document.getElementById(`quantity-${index}`).value, 10);
+                if (quantity > 0) {
+                    const itemTotal = item.price * quantity;
+                    totalAmount += itemTotal;
+                    return `
+                        <div class="summary-item">
+                            <span>${item.name}</span>
+                            <span>₹${itemTotal} (${quantity} x ₹${item.price})</span>
+                        </div>
+                    `;
+                }
+                return '';
+            }).join('');
+
+            totalAmountElement.textContent = `₹${totalAmount}`;
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!');
+        }
+
+        // Initialize the menu
+        renderMenu();
+    </script>
+</body>
+</html>

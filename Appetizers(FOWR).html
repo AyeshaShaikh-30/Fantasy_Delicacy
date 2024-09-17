@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starters</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa; /* Light Gray Background */
+        }
+
+        /* Tab Navigation */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            background-color: #00796b; /* Teal */
+            padding: 10px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover, .tab.active {
+            background-color: #004d40; /* Darker Teal */
+        }
+
+        /* Sections */
+        .section {
+            padding: 30px 20px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #00796b; /* Teal */
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 5px;
+            background-color: #00796b; /* Teal */
+            margin: 20px 0;
+        }
+
+        /* Starter Cards */
+        .starter-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .starter-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 280px;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .starter-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .starter-card h3 {
+            font-size: 24px;
+            margin: 15px 0;
+            color: #00796b; /* Teal */
+        }
+
+        .starter-card p {
+            font-size: 16px;
+            color: #546e7a; /* Blue Grey */
+            padding: 0 10px 20px;
+        }
+
+        .btn-order {
+            background-color: #ff7043; /* Deep Orange */
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+           display: inline-block;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+            width:100%;
+            text-align:center;
+            font-size: 30px;
+        }
+
+        .btn-order:hover {
+            background-color: #f4511e; /* Darker Orange */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .starter-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-container {
+                flex-direction: column;
+            }
+
+            .tab {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+<div class="tab active" onclick="document.
+getElementById('indian').style.display='block'; 
+document.getElementById('non-indian').style.display
+='none'; this.classList.add('active'); document.
+querySelector('.tab:not(.active)').classList.remove
+('active');">Indian Appitizers</div>
+
+<div class="tab" onclick="document
+.getElementById('non-indian').style.display='block';
+ document.getElementById('indian').style.display='none'; 
+ this.classList.add('active'); document.querySelector
+ ('.tab:not(.active)').classList.remove('active');">
+ Non-Indian Appetizers</div>
+    </div>
+
+    <!-- Indian Starters Section -->
+    <section id="indian" class="section">
+        <h2>Indian Appetizers</h2>
+        <div class="section-divider"></div>
+        <div class="starter-grid">
+            <!-- Vegetarian Starters -->
+            <div class="starter-card">
+                <img src="samosa.jpg" alt="Samosa">
+                <h3>Samosa</h3>
+    <p>Deep-fried pastry filled with spiced potatoes and 
+        peas.<br>
+    4pieces of Samosa</p>
+                <h3>Price:200Rs.</h3>
+                
+            </div>
+            <div class="starter-card">
+                <img src="pakoda.jpg" alt="Pakoras">
+                <h3>Pakoras</h3>
+                <p>Vegetable fritters dipped in chickpea flour and spices.</p>
+                <h3>Price:80Rs.</h3>
+            
+            </div>
+            <div class="starter-card">
+                <img src="paneertikka.jpg" alt="Paneer Tikka">
+                <h3>Paneer Tikka</h3>
+                <p>Grilled cubes of marinated paneer with aromatic spices.</p>
+                <h3>Price:400Rs.</h3>
+                
+            </div>
+            <div class="starter-card">
+                <img src="dahi puri.jpg" alt="Dahi Puri">
+                <h3>Dahi Puri</h3>
+                <p>Crispy puris filled with yogurt, chutneys, and spices.</p>
+                <h3>Price:150Rs.</h3>
+            </div>
+
+            <!-- Non-Vegetarian Starters -->
+            <div class="starter-card">
+                <img src="chickentikka.jpg" alt="Chicken Tikka">
+                <h3>Chicken Tikka</h3>
+                <p>Spicy grilled chicken pieces
+                     marinated in yogurt and spices.
+                    <br>8pieces of chicken</p>
+                    <h3>Price:500Rs.</h3>
+                
+                
+            </div>
+            <div class="starter-card">
+                <img src="seekh kabab.jpg" alt="Seekh Kebab">
+                <h3>Seekh Kebab</h3>
+                <p>Minced meat skewers seasoned 
+                    with Indian spices and grilled.
+                <br>5pieces</p>
+                <h3>Price:350Rs.</h3>
+                
+                
+            </div>
+            <div class="starter-card">
+                <img src="mutton shami kebab.jpg" alt="Mutton Shami Kebab">
+                <h3>Mutton Shami Kebab</h3>
+                <p>Spicy minced mutton patties 
+                    with a blend of aromatic spices.
+                <br>5pieces.</p>
+                <h3>Price:400Rs.</h3>
+                
+                
+            </div>
+            <div class="starter-card">
+                <img src="fishtikka.jpg" alt="Fish Tikka">
+                <h3>Fish Tikka</h3>
+                <p>Grilled fish chunks 
+                    marinated with spices and yogurt.
+                <br>5pieces</p>
+                <h3>Price:500Rs.</h3>
+                
+            </div>
+            <a href="OderPageStarters.html" 
+            target="_blank"
+            class="btn-order">Order from 
+                Indian Appetizers
+            </a>
+        </div>
+    </section>
+
+    <!-- Non-Indian Starters Section -->
+    <section id="non-indian" class="section" style="display: none;">
+        <h2>Non-Indian Appetizers</h2>
+        <div class="section-divider"></div>
+        <div class="starter-grid">
+            <!-- Vegetarian Starters -->
+            <div class="starter-card">
+                <img src="burschetta.jpg" alt="Bruschetta">
+                <h3>Bruschetta</h3>
+                <p>Toasted bread with 
+                    fresh tomatoes, basil, 
+                    and a hint of garlic.</p>
+                    <h3>Price:300Rs.</h3>
+                
+            </div>
+            <div class="starter-card">
+                <img src="springrolls.jpg" alt="Spring Rolls">
+                <h3>Spring Rolls</h3>
+                <p>Crispy rolls filled with fresh vegetables and served with a tangy dipping sauce.</p>
+                <h3>Price:200Rs.</h3>
+                
+            </div>
+            <div class="starter-card">
+                <img src="stuffedmushrooms.jpg" alt="Stuffed Mushrooms">
+                <h3>Stuffed Mushrooms</h3>
+                <p>Mushrooms filled with a savory mixture of cheese and herbs.</p>
+                <h3>Price:600Rs.</h3>
+                
+            </div>
+            <div class="starter-card">
+                <img src="hummus.jpg" alt="Hummus">
+                <h3>Hummus</h3>
+                <p>Classic chickpea dip served with pita bread and veggies.</p>
+                <h3>Price:250Rs.</h3>
+                
+            </div>
+
+            
+
+            <!-- Non-Vegetarian Starters -->
+            <div class="starter-card">
+                <img src="calamari.jpg" alt="Calamari">
+                <h3>Calamari</h3>
+                <p>Lightly fried squid rings served with marinara sauce
+                    <p>Lightly fried squid rings served with marinara sauce.</p>
+                    <h3>Price:800Rs.</h3>
+                    
+                </div>
+                <div class="starter-card">
+                    <img src="chickenwings.jpg" alt="Chicken Wings">
+                    <h3>Chicken Wings</h3>
+                    <p>Crispy chicken wings tossed in a tangy and spicy sauce.</p>
+                    <h3>Price:500Rs.</h3>
+                    
+                </div>
+                <div class="starter-card">
+                    <img src="garlicshrimp.jpg" alt="Garlic Shrimp">
+                    <h3>Garlic Shrimp</h3>
+                    <p>Sautéed shrimp with garlic, lemon, and herbs.</p>
+                    <h3>Price:750Rs.</h3>
+                    
+                </div>
+                <div class="starter-card">
+                    <img src="meatballs.jpg" alt="Meatballs">
+                    <h3>Meatballs</h3>
+                    <p>Juicy meatballs in a savory tomato sauce.</p>
+                    <h3>Price:450Rs.</h3>
+                    
+                </div>
+                <a href="OderPageStarters.html" 
+                target="_blank"
+                 class="btn-order">Order from 
+                   Non-Indian Appetizers
+                </a>
+            </div>
+        </section>
+    </body>
+    </html>
+    

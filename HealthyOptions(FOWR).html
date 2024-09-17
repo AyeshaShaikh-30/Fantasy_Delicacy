@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Options</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.browse-options {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f9;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.browse-options a {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.browse-options a:hover {
+    background-color: #388e3c;
+    transform: translateY(-5px);
+}
+
+main {
+    padding: 20px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    font-size: 2rem;
+    color: #4caf50;
+    border-bottom: 3px solid #388e3c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item h3 {
+    margin: 10px 0;
+    font-size: 1.25rem;
+    color: #4caf50;
+}
+
+.item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.order-button {
+    display: block;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 30px auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.order-button:hover {
+    background-color: #388e3c;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <header id="batman">
+        <h1>Healthy Options</h1>
+    </header>
+    <div class="browse-options" >
+        <a href="#grain-bowls">Grain Bowls</a>
+        <a href="#healthy-snacks">Healthy Snacks</a>
+        <a href="#wraps-sandwiches">Wraps & Sandwiches</a>
+    </div>
+    <main>
+        <section class="category" id="grain-bowls">
+            <h2>Grain Bowls</h2>
+            <div class="item-container">
+                <div class="item">
+         <img src="Quinoa & Black Bean Bowl.jpg" 
+         alt="Quinoa & Black Bean Bowl">
+                    <h3>Quinoa & Black Bean Bowl</h3>
+                    <p>₹200</p>
+                </div>
+                <div class="item">
+                    <img src="Mediterranean Grain Bowl.jpg" alt="Mediterranean Grain Bowl">
+                    <h3>Mediterranean Grain Bowl</h3>
+                    <p>₹250</p>
+                </div>
+                <div class="item">
+                    <img src="Teriyaki Chicken Bowl.jpg" alt="Teriyaki Chicken Bowl">
+                    <h3>Teriyaki Chicken Bowl</h3>
+                    <p>₹250</p>
+                </div>
+                <div class="item">
+                    <img src="Sweet Potato & Kale Bowl.jpg" alt="Sweet Potato & Kale Bowl">
+                    <h3>Sweet Potato & Kale Bowl</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="item">
+                    <img src="Asian Sesame Bowl.jpg" alt="Asian Sesame Bowl">
+                    <h3>Asian Sesame Bowl</h3>
+                    <p>₹250</p>
+                </div>
+                <div class="item">
+                    <img src="Spicy Lentil Bowl.jpg" alt="Spicy Lentil Bowl">
+                    <h3>Spicy Lentil Bowl</h3>
+                    <p>₹200</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="healthy-snacks">
+            <h2>Healthy Snacks</h2>
+            <div class="item-container">
+                <div class="item">
+                    <img src="Greek Yogurt & Fruit Parfai.jpg" alt="Greek Yogurt & Fruit Parfait">
+                    <h3>Greek Yogurt & Fruit Parfait</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="item">
+                    <img src="Veggie Sticks & Hummus.jpg" alt="Veggie Sticks & Hummus">
+                    <h3>Veggie Sticks & Hummus</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="item">
+                    <img src="Chia Seed Pudding.jpg" alt="Chia Seed Pudding">
+                    <h3>Chia Seed Pudding</h3>
+                    <p>₹200</p>
+                </div>
+                <div class="item">
+                    <img src="Almond & Coconut Energy Balls.jpg" alt="Almond & Coconut Energy Balls">
+                    <h3>Almond & Coconut Energy Balls</h3>
+                    <p>₹250</p>
+                </div>
+                <div class="item">
+                    <img src="Apple Slices with Almond Butt.jpg" alt="Apple Slices with Almond Butter">
+                    <h3>Apple Slices with Almond Butter</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="item">
+                    <img src="Edamame Beans.jpg" alt="Edamame Beans">
+                    <h3>Edamame Beans</h3>
+                    <p>₹250</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="wraps-sandwiches">
+            <h2>Wraps & Sandwiches</h2>
+            <div class="item-container">
+                <div class="item">
+                    <img src="Turkey & Avocado Wrap.jpg" alt="Turkey & Avocado Wrap">
+                    <h3>Turkey & Avocado Wrap</h3>
+                    <p>₹350</p>
+                </div>
+                <div class="item">
+                    <img src="Hummus & Veggie Wrap.jpg" alt="Hummus & Veggie Wrap">
+                    <h3>Hummus & Veggie Wrap</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="item">
+                    <img src="Chicken Caesar Wrap.jpg" alt="Chicken Caesar Wrap">
+                    <h3>Chicken Caesar Wrap</h3>
+                    <p>₹300</p>
+                </div>
+                <div class="item">
+                    <img src="Caprese Sandwich.jpg" alt="Caprese Sandwich">
+                    <h3>Caprese Sandwich</h3>
+                    <p>₹280</p>
+                </div>
+                <div class="item">
+                    <img src="Tuna Salad Sandwich.jpg" alt="Tuna Salad Sandwich">
+                    <h3>Tuna Salad Sandwich</h3>
+                    <p>₹350</p>
+                </div>
+                <div class="item">
+                    <img src="Veggie & Hummus Sandwich.jpg" alt="Veggie & Hummus Sandwich">
+                    <h3>Veggie & Hummus Sandwich</h3>
+                    <p>₹300</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="OrderPageHealthy.html" class="order-button">
+            Order Healthy Be Healthy</a>
+    </footer>
+</body>
+</html>

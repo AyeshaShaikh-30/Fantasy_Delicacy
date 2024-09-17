@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appetizers Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2e8b57; /* Olive green color */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #2e8b57; /* Olive green color */
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .item-selection, .order-summary {
+            margin-top: 20px;
+        }
+
+        .item-list {
+            margin-bottom: 20px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .item h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity input {
+            width: 60px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .order-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .order-summary li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .order-summary p {
+            font-weight: bold;
+        }
+
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .btn-order {
+            background-color: #2e8b57; /* Olive green color */
+            color: white;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: #2e8b57; /* Olive green color */
+            border: 2px solid #2e8b57;
+            text-decoration: none;
+        }
+/*
+        .btn-back {
+            background-color: transparent;
+            color: #3b5998;
+            border: 2px solid #3b5998;
+            text-decoration: none;
+        }
+            */
+.btn-back:hover{
+    background-color: black;
+}
+
+
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2e8b57; /* Olive green color */
+            color: white;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+                max-width: 100%;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .item-list {
+                flex-direction: column;
+            }
+
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quantity input {
+                width: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order from Appetizers</h1>
+    </header>
+
+    <div class="container">
+        <section class="personal-info">
+            <h2>Personal Information</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Name:*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:*</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:*</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+            </form>
+        </section>
+
+        <section class="item-selection">
+            <h2>Select Items</h2>
+            <div class="item-list">
+                <!-- Indian Appetizers -->
+                <div class="item">
+                    <div>
+                        <h3>Samosa</h3>
+                        <p>₹200</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-samosa" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Pakoras</h3>
+                        <p>₹80</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-pakoras" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Paneer Tikka</h3>
+                        <p>₹400</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-paneer" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Dahi Puri</h3>
+                        <p>₹150</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-dahi-puri" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Chicken Tikka</h3>
+                        <p>₹500</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-chicken-tikka" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Seekh Kebab</h3>
+                        <p>₹350</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-seekh-kebab" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Mutton Shami Kebab</h3>
+                        <p>₹400</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-mutton-shami" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Fish Tikka</h3>
+                        <p>₹500</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-fish-tikka" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Non-Indian Appetizers -->
+                <div class="item">
+                    <div>
+                        <h3>Bruschetta</h3>
+                        <p>₹300</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-bruschetta" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Spring Rolls</h3>
+                        <p>₹200</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-spring-rolls" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Stuffed Mushrooms</h3>
+                        <p>₹600</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-stuffed-mushrooms" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Hummus</h3>
+                        <p>₹250</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-hummus" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Calamari</h3>
+                        <p>₹800</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-calamari" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Chicken Wings</h3>
+                        <p>₹500</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-chicken-wings" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Garlic Shrimp</h3>
+                        <p>₹750</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-garlic-shrimp" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Meatballs</h3>
+                        <p>₹450</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-meatballs" value="0" min="0">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-summary-list">
+                <!-- Order summary items will be injected here -->
+            </ul>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Amount: ₹<span id="total-amount">0.00</span></p>
+        </section>
+
+        <section class="actions">
+            <button type="button" 
+            class="btn-order" 
+            onclick="submitOrder()">Submit Order</button>
+
+            <a href="Appetizers(FOWR).html" 
+            target="_blank"
+            class="btn-back">Back to Menu</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>Thank you for choosing us!</p>
+    </footer>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+    const itemPrices = {
+        samosa: 200,
+        pakoras: 80,
+        paneer: 400,
+        dahiPuri: 150,
+        chickenTikka: 500,
+        seekhKebab: 350,
+        muttonShami: 400,
+        fishTikka: 500,
+        bruschetta: 300,
+        springRolls: 200,
+        stuffedMushrooms: 600,
+        hummus: 250,
+        calamari: 800,
+        chickenWings: 500,
+        garlicShrimp: 750,
+        meatballs: 450
+    };
+
+    const updateSummary = () => {
+        const quantities = {
+            samosa: parseInt(document.getElementById('quantity-samosa').value) || 0,
+            pakoras: parseInt(document.getElementById('quantity-pakoras').value) || 0,
+            paneer: parseInt(document.getElementById('quantity-paneer').value) || 0,
+            dahiPuri: parseInt(document.getElementById('quantity-dahi-puri').value) || 0,
+            chickenTikka: parseInt(document.getElementById('quantity-chicken-tikka').value) || 0,
+            seekhKebab: parseInt(document.getElementById('quantity-seekh-kebab').value) || 0,
+            muttonShami: parseInt(document.getElementById('quantity-mutton-shami').value) || 0,
+            fishTikka: parseInt(document.getElementById('quantity-fish-tikka').value) || 0,
+            bruschetta: parseInt(document.getElementById('quantity-bruschetta').value) || 0,
+            springRolls: parseInt(document.getElementById('quantity-spring-rolls').value) || 0,
+            stuffedMushrooms: parseInt(document.getElementById('quantity-stuffed-mushrooms').value) || 0,
+            hummus: parseInt(document.getElementById('quantity-hummus').value) || 0,
+            calamari: parseInt(document.getElementById('quantity-calamari').value) || 0,
+            chickenWings: parseInt(document.getElementById('quantity-chicken-wings').value) || 0,
+            garlicShrimp: parseInt(document.getElementById('quantity-garlic-shrimp').value) || 0,
+            meatballs: parseInt(document.getElementById('quantity-meatballs').value) || 0
+        };
+
+        let totalAmount = 0;
+        let totalItems = 0;
+
+        const summaryList = document.getElementById('order-summary-list');
+        summaryList.innerHTML = '';
+
+        for (const [item, quantity] of Object.entries(quantities)) {
+            if (quantity > 0) {
+                const itemAmount = itemPrices[item] * quantity;
+                totalAmount += itemAmount;
+                totalItems += quantity;
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${item.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())} - ${quantity} x ₹${itemPrices[item].toFixed(2)} <strong>₹${itemAmount.toFixed(2)}</strong>`;
+                summaryList.appendChild(listItem);
+            }
+        }
+
+        document.getElementById('total-items').textContent = totalItems;
+        document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+    };
+
+    const submitOrder = () => {
+        updateSummary();
+        alert('Order Successfully Placed');
+    };
+
+    const quantityInputs = document.querySelectorAll('.quantity input');
+    quantityInputs.forEach(input => {
+        input.addEventListener('input', updateSummary);
+    });
+
+    document.querySelector('.btn-order')
+    .addEventListener('click', submitOrder);
+});
+
+    </script>
+</body>
+</html>

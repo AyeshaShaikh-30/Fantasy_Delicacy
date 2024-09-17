@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 1200px; /* Increased max-width */
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #3b5998;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .item-selection, .order-summary {
+            margin-top: 20px;
+        }
+
+        .item-list {
+            margin-bottom: 20px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .item h3 {
+            margin: 0;
+            font-size: 16px;
+            white-space: nowrap; /* Prevents text wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Adds ellipsis for overflow text */
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity input {
+            width: 60px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .order-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .order-summary li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .order-summary p {
+            font-weight: bold;
+        }
+
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .btn-order {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: #3b5998;
+            border: 2px solid #3b5998;
+            text-decoration: none;
+        }
+.btn-back:hover{
+    background-color: black;
+}
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #3b5998;
+            color: white;
+            font-size: 14px;
+            margin-top: auto; /* Pushes footer to the bottom */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+                max-width: 100%;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .item-list {
+                flex-direction: column;
+            }
+
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quantity input {
+                width: 50px;
+            }
+        }
+        .foot{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order from Crowd Pleasers</h1>
+    </header>
+
+    <div class="container">
+        <section class="personal-info">
+            <h2>Personal Information</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Name:*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:*</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:*</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+            </form>
+        </section>
+
+        <section class="item-selection">
+            <h2>Select Items</h2>
+            <div class="item-list">
+                <div class="item">
+                    <div>
+                        <h3>Roasted Chicken Gravy Combo</h3>
+                        <p>1200Rs. (Full)</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-roasted" value="0" min="0">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div>
+                        <h3>Roasted Chicken Gravy Combo</h3>
+                        <p>800Rs. (Half)</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-roasted" value="0" min="0">
+                    </div>
+                </div>
+
+
+                      <div class="item">
+                    <div>
+                        <h3>Delicious Italian Style Pizza</h3>
+                        <p> 600Rs.</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-pizza" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Juicy Chicken Burger</h3>
+                        <p> 500Rs.</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-burger" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Golden Roasted Salad</h3>
+                        <p> 600Rs.(Large)</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-salad" value="0" min="0">
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div>
+                        <h3>Golden Roasted Salad</h3>
+                        <p>400Rs. (Medium)</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-salad" value="0" min="0">
+                    </div>
+                </div>
+       
+                <div class="item">
+                    <div>
+                        <h3>Giant Veg Beast</h3>
+                        <p>1600Rs. (Large)</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-veggie" value="0" min="0">
+                    </div>
+                </div>
+
+
+
+                <div class="item">
+                    <div>
+                        <h3>Giant Veg Beast</h3>
+                        <p>: 900Rs. (Medium)</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-veggie" value="0" min="0">
+                    </div>
+                </div>
+           
+                <div class="item">
+                    <div>
+                        <h3>Medu Wada Delicacy</h3>
+                        <p> 300Rs.</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-wada" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Spaghetti Bolognese</h3>
+                        <p>700Rs.</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-spaghetti" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Greek Salad</h3>
+                        <p>300Rs</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-greek" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Chocolate Cake</h3>
+                        <p>650Rs</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-cake" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Sushi Rolls</h3>
+                        <p> 800Rs.</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-sushi" value="0" min="0">
+                    </div>
+                </div>
+                <!-- New items -->
+                <div class="item">
+                    <div>
+                        <h3>New York Cheesecake</h3>
+                        <p> 500Rs</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-cheesecake" value="0" min="0">
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <h3>Fresh Croissant</h3>
+                        <p>250Rs.</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" id="quantity-croissant" value="0" min="0">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-summary-list">
+                <!-- Order summary items will be injected here -->
+            </ul>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Amount: ₹<span id="total-amount">0.00</span></p>
+        </section>
+
+        <section class="actions">
+            <button type="button" class="btn-order" 
+            onclick="submitOrder()">Submit Order</button>
+            <a href="CrowdPleasers(FOWR).html" 
+            target="_blank"
+            class="btn-back">Back to Menu</a>
+        </section>
+    </div>
+
+    <footer>
+        <p class="foot">Thank you for choosing us!</p>
+    </footer>
+
+    <script>
+       const itemPrices = {
+            roasted: 1200,
+            roasted: 800,
+            pizza: 600,
+            burger: 500,
+            salad: 600,
+            salad: 400,
+            veggie: 1600,
+            veggie: 900,
+            wada: 300,
+            spaghetti: 700,
+            greek:300,
+            cake: 650,
+            sushi: 800,
+            cheesecake: 500,
+            croissant: 250
+        };
+
+        const updateSummary = () => {
+            const quantities = {
+                roasted: parseInt(document.getElementById('quantity-roasted').value) || 0,
+                pizza: parseInt(document.getElementById('quantity-pizza').value) || 0,
+                burger: parseInt(document.getElementById('quantity-burger').value) || 0,
+                salad: parseInt(document.getElementById('quantity-salad').value) || 0,
+                veggie: parseInt(document.getElementById('quantity-veggie').value) || 0,
+                wada: parseInt(document.getElementById('quantity-wada').value) || 0,
+                spaghetti: parseInt(document.getElementById('quantity-spaghetti').value) || 0,
+                greek: parseInt(document.getElementById('quantity-greek').value) || 0,
+                cake: parseInt(document.getElementById('quantity-cake').value) || 0,
+                sushi: parseInt(document.getElementById('quantity-sushi').value) || 0,
+                cheesecake: parseInt(document.getElementById('quantity-cheesecake').value) || 0,
+                croissant: parseInt(document.getElementById('quantity-croissant').value) || 0
+            };
+
+            let totalAmount = 0;
+            let totalItems = 0;
+
+            const summaryList = document.getElementById('order-summary-list');
+            summaryList.innerHTML = '';
+
+            for (const [item, quantity] of Object.entries(quantities)) {
+                if (quantity > 0) {
+                    const itemAmount = itemPrices[item] * quantity;
+                    totalAmount += itemAmount;
+                    totalItems += quantity;
+
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `${item.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())} - ${quantity} x ₹${itemPrices[item].toFixed(2)} <strong>₹${itemAmount.toFixed(2)}</strong>`;
+                    summaryList.appendChild(listItem);
+                }
+            }
+
+            document.getElementById('total-items').textContent = totalItems;
+            document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+        };
+
+        const submitOrder = () => {
+            updateSummary();
+            alert('Order Successfully Placed');
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const quantityInputs = document.querySelectorAll('.quantity input');
+            quantityInputs.forEach(input => {
+                input.addEventListener('input', updateSummary);
+            });
+
+            // Attach submitOrder function to the button
+            const orderButton = 
+            document.querySelector('.btn-order');
+            orderButton.addEventListener
+            ('click', submitOrder);
+        });
+            </script>
+</body>
+</html>

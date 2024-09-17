@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks and Sides</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #2e8b57; /* Olive Green */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .hero-section {
+            background-color: #f0f8f0; /* Light Olive Green */
+            padding: 20px;
+            text-align: center;
+        }
+        .hero-section h2 {
+            font-size: 2rem;
+            color: #2e8b57;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .snack-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .snack-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            width: calc(25% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .snack-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .snack-item h3 {
+            margin: 10px 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        .snack-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+        footer {
+            background-color: #2e8b57; /* Olive Green */
+            padding: 20px;
+            text-align: center;
+        }
+        .order-button {
+            background-color: #f0f8f0; /* Light Olive Green */
+            color: #2e8b57; /* Olive Green */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .order-button:hover {
+            background-color: #0f0f0f;
+            color: white;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            z-index: 100;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .order-button{
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Snacks and Sides</h1>
+    </header>
+    <div class="hero-section" id="batman">
+        <h2>Discover Our Delicious Snacks and Sides</h2>
+        <p>Explore our wide range of snacks and sides, featuring both Indian and international flavors, vegetarian and non-vegetarian options. Perfect for every occasion and taste preference.</p>
+    </div>
+    <main>
+        <div class="snack-container">
+            <!-- Updated prices according to provided values -->
+            <div class="snack-item">
+                <img src="pakoda.jpg" alt="Pakora">
+                <h3>Pakora</h3>
+                <p>₹150</p>
+            </div>
+            <div class="snack-item">
+                <img src="samosa.jpg" alt="Samosa">
+                <h3>Samosa</h3>
+                <p>₹120</p>
+            </div>
+            <div class="snack-item">
+                <img src="springrolls.jpg" alt="Spring Rolls">
+                <h3>Spring Rolls</h3>
+                <p>₹180</p>
+            </div>
+            <div class="snack-item">
+                <img src="chickenwings.jpg" alt="Chicken Wings">
+                <h3>Chicken Wings</h3>
+                <p>₹250</p>
+            </div>
+            <div class="snack-item">
+                <img src="nachos.jpg" alt="Nachos">
+                <h3>Nachos</h3>
+                <p>₹200</p>
+            </div>
+            <div class="snack-item">
+                <img src="Cheese Sticks.jpg" alt="Cheese Sticks">
+                <h3>Cheese Sticks</h3>
+                <p>₹220</p>
+            </div>
+            <div class="snack-item">
+                <img src="Potato Wedges.jpg" alt="Potato Wedges">
+                <h3>Potato Wedges</h3>
+                <p>₹160</p>
+            </div>
+            <div class="snack-item">
+                <img src="Garlic Bread.jpg" alt="Garlic Bread">
+                <h3>Garlic Bread</h3>
+                <p>₹180</p>
+            </div>
+            <div class="snack-item">
+                <img src="Loaded Fries.jpg" alt="Loaded Fries">
+                <h3>Loaded Fries</h3>
+                <p>₹240</p>
+            </div>
+            <div class="snack-item">
+                <img src="Onion Rings.jpg" alt="Onion Rings">
+                <h3>Onion Rings</h3>
+                <p>₹160</p>
+            </div>
+            <div class="snack-item">
+                <img src="Vegetable Samosa.jpg" alt="Vegetable Samosa">
+                <h3>Vegetable Samosa</h3>
+                <p>₹120</p>
+            </div>
+            <div class="snack-item">
+                <img src="Chili Cheese Dip.jpg" alt="Chili Cheese Dip">
+                <h3>Chili Cheese Dip</h3>
+                <p>₹180</p>
+            </div>
+            <div class="snack-item">
+                <img src="Sweet Potato Fries.jpg" alt="Sweet Potato Fries">
+                <h3>Sweet Potato Fries</h3>
+                <p>₹200</p>
+            </div>
+            <div class="snack-item">
+                <img src="Vegetable Spring Rolls.jpg" alt="Vegetable Spring Rolls">
+                <h3>Vegetable Spring Rolls</h3>
+                <p>₹180</p>
+            </div>
+            <div class="snack-item">
+                <img src="calamari.jpg" alt="Fried Calamari">
+                <h3>Fried Calamari</h3>
+                <p>₹300</p>
+            </div>
+            <div class="snack-item">
+                <img src="mutton kebab.jpg" alt="Mutton Kebab">
+                <h3>Mutton Kebab</h3>
+                <p>₹350</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="OrderPageSnacksndSides.html" target="_blank" class="order-button">Order Now</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialty Cuisines Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #ff7043;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .order-page {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-page h1 {
+            color: #ff7043;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .cuisine-category {
+            margin-bottom: 30px;
+        }
+
+        .cuisine-category h2 {
+            background-color: #ffab40;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            flex: 2;
+        }
+
+        .item-price {
+            flex: 1;
+            text-align: right;
+            color: #ff7043;
+        }
+
+        .item-quantity input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .summary {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .order-button {
+            width: 100%;
+            background-color: #ff7043;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .order-button:hover {
+            background-color: #e64a19;
+        }
+
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ccc;
+            color: black;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 20px;
+            color: #ff7043;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Order Your Specialty Cuisines</h1>
+    </header>
+    <div class="container">
+        <div class="order-page">
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="address" placeholder="Address">
+                <input type="text" id="contact" placeholder="Contact Number">
+            </div>
+
+            <h1>Menu</h1>
+
+            <div id="menu-items"></div>
+
+            <div class="summary">
+                <h3>Order Summary</h3>
+                <div id="summary-items"></div>
+                <div class="summary-item">
+                    <strong>Total:</strong>
+                    <span id="total-amount">₹0</span>
+                </div>
+            </div>
+            <button class="order-button" onclick="placeOrder()">Place Order</button>
+            <a class="back-button" target="_blank"
+            href="Speciality(FOWR).html">Back to Menu</a>
+        </div>
+    </div>
+    <div class="thank-you">
+        Thank you for choosing us!
+    </div>
+
+    <script>
+        const items = [
+            { category: 'Italian', dishes: [{ name: 'Pizza', price: 500 }, { name: 'Lasagna', price: 600 }, { name: 'Ravioli', price: 550 }, { name: 'Gnocchi', price: 500 }, { name: 'Spaghetti', price: 450 }] },
+            { category: 'Mexican', dishes: [{ name: 'Tacos', price: 350 }, { name: 'Burrito', price: 400 }, { name: 'Enchiladas', price: 450 }, { name: 'Quesadilla', price: 400 }, { name: 'Churros', price: 300 }] },
+            { category: 'Indian', dishes: [{ name: 'Biryani', price: 450 }, { name: 'Butter Chicken', price: 500 }, { name: 'Palak Paneer', price: 400 }, { name: 'Dosa', price: 350 }, { name: 'Samosa', price: 150 }] },
+            { category: 'Thai', dishes: [{ name: 'Pad Thai', price: 500 }, { name: 'Green Curry', price: 600 }, { name: 'Spring Rolls', price: 300 }, { name: 'Larb', price: 450 }, { name: 'Tom Yum', price: 500 }] }
+        ];
+
+        function renderMenu() {
+            const menuContainer = document.getElementById('menu-items');
+            menuContainer.innerHTML = items.map(category => `
+                <div class="cuisine-category">
+                    <h2>${category.category}</h2>
+                    ${category.dishes.map((dish, index) => `
+                        <div class="item">
+                            <div class="item-name">${dish.name}</div>
+                            <div class="item-price">₹${dish.price}</div>
+                            <div class="item-quantity">
+                                <input type="number" id="quantity-${category.category}-${index}" min="0" value="0" onchange="updateSummary()">
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+
+        function updateSummary() {
+            const summaryContainer = document.getElementById('summary-items');
+            const totalAmountElement = document.getElementById('total-amount');
+            let totalAmount = 0;
+
+            summaryContainer.innerHTML = items.map(category => 
+                category.dishes.map((dish, index) => {
+                    const quantity = parseInt(document.getElementById(`quantity-${category.category}-${index}`).value, 10);
+                    if (quantity > 0) {
+                        const itemTotal = dish.price * quantity;
+                        totalAmount += itemTotal;
+                        return `
+                            <div class="summary-item">
+                                <span>${dish.name}</span>
+                                <span>₹${itemTotal} (${quantity} x ₹${dish.price})</span>
+                            </div>
+                        `;
+                    }
+                    return '';
+                }).join('')
+            ).join('');
+
+            totalAmountElement.textContent = `₹${totalAmount}`;
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!');
+        }
+
+        renderMenu();
+    </script>
+</body>
+
+</html>

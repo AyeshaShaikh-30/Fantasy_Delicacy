@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Menu</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff8e1;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-container {
+            width: 85%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffefc3;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .category h2 {
+            color: #ff9248;
+            font-size: 26px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 8px;
+        }
+        .category ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .category ul li {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff3d0;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+        .category ul li:hover {
+            transform: scale(1.03);
+        }
+        .item-info {
+            display: flex;
+            align-items: center;
+            width: 70%;
+        }
+        .category ul li img {
+            width: 70px;
+            height: 70px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid #ff6b6b;
+        }
+        .item-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .item-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .item-details {
+            margin-left: 10px;
+        }
+        .item-price {
+            font-size: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        .order-button {
+            display: block;
+            width: 250px;
+            margin: 40px auto;
+            padding: 15px;
+            background-color: #ff6b6b;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #ff9248;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container" id="kids">
+        <h1>Kids Menu</h1>
+
+        <!-- Mini Mains Category -->
+        <div class="category">
+            <h2>Mini Mains</h2>
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="chicken nuggets.jpg" alt="Chicken Nuggets">
+                        <div class="item-details">
+                            <span class="item-name">Chicken Nuggets</span><br>
+                            <span class="item-description">Crispy nuggets served with ketchup.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹250</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="mini cheese pizza.jpg" alt="Mini Cheese Pizza">
+                        <div class="item-details">
+                            <span class="item-name">Mini Cheese Pizza</span><br>
+                            <span class="item-description">Delicious pizza with mozzarella cheese.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹300</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Mini Hot Dogs.jpg" alt="Mini Hot Dogs">
+                        <div class="item-details">
+                            <span class="item-name">Mini Hot Dogs</span><br>
+                            <span class="item-description">Grilled hot dogs with mustard and ketchup.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹200</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Grilled Cheese Sandwich.jpg" alt="Grilled Cheese Sandwich">
+                        <div class="item-details">
+                            <span class="item-name">Grilled Cheese Sandwich</span><br>
+                            <span class="item-description">Toasted bread with melted cheese.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹220</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Mac & Cheese.jpg" alt="Mac & Cheese">
+                        <div class="item-details">
+                            <span class="item-name">Mac & Cheese</span><br>
+                            <span class="item-description">Creamy macaroni with cheddar cheese.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹250</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tiny Breakfasts Category -->
+        <div class="category">
+            <h2>Tiny Breakfasts</h2>
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="Mini Pancakes.jpg" alt="Mini Pancakes">
+                        <div class="item-details">
+                            <span class="item-name">Mini Pancakes</span><br>
+                            <span class="item-description">Fluffy pancakes with maple syrup.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹180</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Scrambled Eggs.jpg" alt="Scrambled Eggs">
+                        <div class="item-details">
+                            <span class="item-name">Scrambled Eggs</span><br>
+                            <span class="item-description">Soft scrambled eggs with toast.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹150</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="French Toast.jpg" alt="French Toast">
+                        <div class="item-details">
+                            <span class="item-name">French Toast</span><br>
+                            <span class="item-description">Golden-brown French toast with syrup.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹220</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Mini Waffles.jpg" alt="Mini Waffles">
+                        <div class="item-details">
+                            <span class="item-name">Mini Waffles</span><br>
+                            <span class="item-description">Crispy waffles with honey drizzle.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹180</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Mini Omelette.jpg" alt="Mini Omelette">
+                        <div class="item-details">
+                            <span class="item-name">Mini Omelette</span><br>
+                            <span class="item-description">Omelette with veggies and cheese.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹150</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Fun Snacks Category -->
+        <div class="category">
+            <h2>Fun Snacks</h2>
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="popcorn.jpg" alt="Popcorn">
+                        <div class="item-details">
+                            <span class="item-name">Popcorn</span><br>
+                            <span class="item-description">Lightly salted buttery popcorn.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹100</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="french fries.jpg" alt="French Fries">
+                        <div class="item-details">
+                            <span class="item-name">French Fries</span><br>
+                            <span class="item-description">Golden fries with seasoning.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹150</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Soft Pretzels.jpg" alt="Pretzels">
+                        <div class="item-details">
+                            <span class="item-name">Soft Pretzels</span><br>
+                            <span class="item-description">Warm soft pretzels with mustard.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹120</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Veggie Sticks.jpg" alt="Veggie Sticks">
+                        <div class="item-details">
+                            <span class="item-name">Veggie Sticks</span><br>
+                            <span class="item-description">Crispy veggie sticks with ranch dip.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹130</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Potato Chips.jpg" alt="Potato Chips">
+                        <div class="item-details">
+                            <span class="item-name">Potato Chips</span><br>
+                            <span class="item-description">Crunchy chips with a hint of salt.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹100</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Onion Rings.jpg" alt="Onion Rings">
+                        <div class="item-details">
+                            <span class="item-name">Onion Rings</span><br>
+                            <span class="item-description">Crispy rings with a savory flavor.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹150</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sweet Treats Category -->
+        <div class="category">
+            <h2>Sweet Treats</h2>
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="cookies.jpg" alt="Chocolate Chip Cookies">
+                        <div class="item-details">
+                            <span class="item-name">Chocolate Chip Cookies</span><br>
+                            <span class="item-description">Soft cookies with melted chocolate.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹180</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Brownie Bites.jpg" alt="Brownie Bites">
+                        <div class="item-details">
+                            <span class="item-name">Brownie Bites</span><br>
+                            <span class="item-description">Rich chocolate brownies in bite-size.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹200</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="cupcakes.jpg" alt="Mini Cupcakes">
+                        <div class="item-details">
+                            <span class="item-name">Mini Cupcakes</span><br>
+                            <span class="item-description">Vanilla cupcakes with frosting.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹150</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Chocolate Pudding.jpg" alt="Chocolate Pudding">
+                        <div class="item-details">
+                            <span class="item-name">Chocolate Pudding</span><br>
+                            <span class="item-description">Creamy pudding with whipped cream.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹180</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Mini Ice Cream Cones.jpg" alt="Mini Ice Cream Cones">
+                        <div class="item-details">
+                            <span class="item-name">Mini Ice Cream Cones</span><br>
+                            <span class="item-description">Vanilla ice cream with a chocolate dip.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹200</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Drink Delights Category -->
+        <div class="category">
+            <h2>Drink Delights</h2>
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="Chocolate Milkshake.jpg" alt="Chocolate Milkshake">
+                        <div class="item-details">
+                            <span class="item-name">Chocolate Milkshake</span><br>
+                            <span class="item-description">Creamy milkshake with chocolate syrup.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹250</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="apple juice.jpg" alt="Fruit Juice">
+                        <div class="item-details">
+                            <span class="item-name">Fruit Juice</span><br>
+                            <span class="item-description">Freshly squeezed orange or apple juice.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹150</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="berry smoothie.jpg" alt="Berry Smoothie">
+                        <div class="item-details">
+                            <span class="item-name">Berry Smoothie</span><br>
+                            <span class="item-description">Mixed berry smoothie with yogurt.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹200</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="lemonade.jpg" alt="Flavored Water">
+                        <div class="item-details">
+                            <span class="item-name">Flavored Water</span><br>
+                            <span class="item-description">Refreshing water with a hint of lemon.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹100</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Strawberry Milk.jpg" alt="Strawberry Milk">
+                        <div class="item-details">
+                            <span class="item-name">Strawberry Milk</span><br>
+                            <span class="item-description">Chilled milk with strawberry flavor.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹200</div>
+                </li>
+            </ul>
+        </div>
+
+        <a href="OrderPageKids.html" target="_blank" class="order-button">Order from Kids Menu</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Pleasers</title>
+    <style>
+        body {
+            background-color: #C0C0C0; /* Light Silver */
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #004d40; /* Teal Blue */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 120px;
+            clip-path: circle(50%);
+            margin-right: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .nav {
+            margin: 0 12px;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #003366; /* Deep Sea Blue */
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav:hover {
+            background-color: #FF6F61; /* Soft Coral */
+            color: #333;
+        }
+
+        .logofood img {
+            height: 120px; /* Increased size */
+            width: 120px; /* Increased size */
+            clip-path: circle(50%);
+        }
+
+        .order {
+            display: flex;
+            justify-content: center;
+            background-color: #004d40; /* Matching header color */
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ordering {
+            font-size: 26px;
+            color: #FFFFFF;
+            text-decoration: none;
+            background-color: #003366; /* Deep Sea Blue */
+            padding: 12px 24px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .ordering:hover {
+            background-color: #0bfad2; /* Teal Blue */
+        }
+
+        #crowd-pleaser {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        #crowd-pleaser h2 {
+            font-size: 36px;
+            color: #004d40; /* Matching header color */
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+            animation: wave 2s infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+            }
+            50% {
+                filter: drop-shadow(2px 4px 6px #FF6F61);
+            }
+        }
+
+        #food {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .food-item {
+            background-color: #003366; /* Deep Sea Blue */
+            border-radius: 20px;
+            margin: 20px;
+            padding: 15px;
+            width: 260px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .food-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .food-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .food-info {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .food-info h3 {
+            margin: 5px 0;
+            font-size: 20px;
+            color: #FF6F61; /* Soft Coral */
+        }
+
+        @media (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            .logo img {
+                height: 100px;
+            }
+
+            .food-item {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="me2.jpeg" alt="User Photo">
+        </div>
+        <nav class="navigation">
+            <a class="nav" href="#crowd-pleaser">Home</a>
+            <a class="nav" href="#food">Crowd Pleasers</a>
+            <a class="nav" target="_blank"
+            href="Categories(FOWR).html">Categories</a>
+            <a class="nav" target="_blank"
+             href="index.html">
+                About Us</a>
+            <a class="nav" target="_blank"
+            href="OurPartners(FOWR).html">
+                Our Partners</a>
+            <a class="nav" href="ContactUs(FOWR).html" 
+            target="_blank">
+                Contact Us</a>
+        </nav>
+        <div class="logofood">
+            <img src="t.png" alt="Food Logo">
+        </div>
+    </header>
+
+    
+
+    <div id="crowd-pleaser">
+        <h2>Crowd Pleasers</h2>
+    </div>
+
+    <div id="food">
+        <div class="food-item">
+            <img src="chicken food.jpg" alt="Roasted Chicken Gravy Combo">
+            <div class="food-info">
+                <h3>Roasted Chicken Gravy Combo</h3>
+                <p>Chicken is roasted and prepared with a rich gravy<br>served with Naan and side dishes.<br><b>Price: 1200Rs. (Full)</b><br><b>Price: 800Rs. (Half)</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="italian pizza.jpg" 
+            alt="Delicious Italian Style Pizza">
+            <div class="food-info">
+                <h3>Delicious Italian Style Pizza</h3>
+                <p>Pizza prepared with fresh tomatoes,<br>capsicum, paneer, and more.<br><b>Price: 600Rs.</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="chicken burgers.jpg" alt="Juicy Chicken Burger">
+            <div class="food-info">
+                <h3>Juicy Chicken Burger</h3>
+                <p>Delicious Chicken patty with 
+                    fresh lettuce,<br>tomato, and 
+                    cheese in a soft bun along with the fries.<br><b>Price: 500Rs.</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="salad.jpg" alt="Golden Roasted Salad">
+            <div class="food-info">
+                <h3>Golden Roasted Salad</h3>
+                <p>Roasted veggies, Pasta, Corn 
+                    with Thai Coconut-Miso Grain and 
+                    Roasted Peas along 
+                    with chicken pieces serving 
+                    as protein.<br><b>Price: 600Rs. (Large)</b><br><b>Price: 400Rs. (Medium)</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="food2.jpg" alt="Giant Veg Beast">
+            <div class="food-info">
+                <h3>Giant Veg Beast</h3>
+                <p>Steamed Basmati rice, Whole wheat Chapati, Paneer Curry, Mix Veg sabzi.<br><b>Price: 1600Rs. (Large)</b><br><b>Price: 900Rs. (Medium)</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="meduwada.jpg" alt="Medu Wada Delicacy">
+            <div class="food-info">
+                <h3>Medu Wada Delicacy</h3>
+                <p>Wada dipped in Sambar with Coconut-chutney and mint-chutney.<br><b>Price: 300Rs. (Large)</b><br><b>Price: 500Rs. (Medium)</b></p>
+            </div>
+        </div>
+        <!-- New Food Items -->
+        <div class="food-item">
+            <img src="spaghetti.jpg" alt="Spaghetti Bolognese">
+            <div class="food-info">
+                <h3>Spaghetti Bolognese</h3>
+                <p>Classic Italian pasta dish with rich meat sauce,<br>topped with parmesan cheese.<br><b>Price: 700Rs.</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="sushi.jpg" alt="Sushi Roll">
+            <div class="food-info">
+                <h3>Sushi Roll</h3>
+                <p>Freshly prepared sushi rolls with a variety of fillings,<br>served with soy sauce and wasabi.<br><b>Price: 800Rs.</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="salads.jpg" alt="greek Salad">
+            <div class="food-info">
+                <h3>Greek Salad</h3>
+        <p>Crisp cucumbers, tomatoes, 
+            olives, and feta cheese 
+            tossed with oregano and olive oil.</p>
+            <b>Price:300Rs.</b>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="chocolate cake.jpg" alt="Chocolate cake">
+            <div class="food-info">
+                <h3>Chocolate Cake</h3>
+                <p>Indulge in 
+                    our rich and moist 
+                    chocolate cake, crafted with
+                     the finest cocoa and chocolate.
+                     <br> 
+                    <b>Price: 650Rs.</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="cheesecake2.jpg" alt="New York Cheesecake">
+            <div class="food-info">
+                <h3>New York Cheesecake</h3>
+                <p>Rich and creamy cheesecake with
+                     a graham cracker crust,<br>
+                     topped with a berry compote
+                     .<br><b>Price: 500Rs.</b></p>
+            </div>
+        </div>
+        <div class="food-item">
+            <img src="crossiant.jpg" alt="Fresh Croissant">
+            <div class="food-info">
+                <h3>Fresh Croissant</h3>
+                <p>Buttery and flaky croissant,
+                     perfect for breakfast along 
+             with complementary coffee.<br><b>Price: 250Rs.</b></p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="order">
+        <a class="ordering" target="_blank" 
+        href="OrderPageCrowdPleasers.html">To Order</a>
+    </div>
+</body>
+</html>

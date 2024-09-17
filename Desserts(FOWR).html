@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f1f8e9; /* Light Green */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            background-image: url('desserts-hero.jpg'); /* Update with your hero image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 150, 136, 0.8); /* Teal with Transparency */
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 1px 2px 2px black;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .cta-button {
+            background-color: #ffb300; /* Amber */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            box-shadow: 2px 1px 2px black;
+        }
+
+        .cta-button:hover {
+            background-color: #ffa000; /* Darker Amber */
+        }
+
+        .browse-button {
+            background-color: #00796b; /* Teal */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            box-shadow: 2px 1px 2px black;
+        }
+
+        .browse-button:hover {
+            background-color: #004d40; /* Darker Teal */
+        }
+
+        /* Desserts Grid */
+        .desserts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+        }
+
+        .dessert-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #dce775; /* Light Green Border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px;
+        }
+
+        .dessert-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .dessert-card h2 {
+            font-size: 22px;
+            margin: 15px 0;
+            color: #ffb300; /* Amber */
+        }
+
+        .dessert-card p {
+            color: #424242; /* Dark Grey */
+            padding: 0 10px 10px;
+        }
+
+        .dessert-card .price {
+            font-size: 20px;
+            color: #00796b; /* Teal */
+            margin: 10px 0;
+        }
+
+        .dessert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .order-button {
+            background-color: #00796b; /* Teal */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 2px 1px 2px black;
+        }
+
+        .order-button:hover {
+            background-color: #004d40; /* Darker Teal */
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Our Delectable Desserts</h1>
+            <p>Indulge in a variety of sweet treats</p>
+            <a href="#desserts" class="browse-button">Browse Desserts</a>
+        </div>
+    </section>
+
+    <!-- Desserts Grid -->
+    <section id="desserts" class="desserts-grid">
+        <div class="dessert-card">
+            <img src="chocolate cake.jpg" alt="Chocolate Cake">
+            <h2>Chocolate Cake</h2>
+            <p>Rich and moist chocolate cake with creamy frosting.</p>
+            <div class="price">Rs.600</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="cheesecake.jpg" alt="Cheesecake">
+            <h2>Cheesecake</h2>
+            <p>Classic cheesecake with a buttery graham cracker crust.</p>
+            <div class="price">Rs.400</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="tiramisu.jpg" alt="Tiramisu">
+            <h2>Tiramisu</h2>
+            <p>Layers of coffee-soaked ladyfingers with mascarpone cream.</p>
+            <div class="price">Rs.200</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="fruit tart.jpg" alt="Fruit Tart">
+            <h2>Fruit Tart</h2>
+            <p>Fresh fruit on a crisp pastry crust with vanilla custard.</p>
+            <div class="price">Rs.350</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="brownies.jpg" alt="Brownies">
+            <h2>Brownies</h2>
+            <p>Chewy, fudgy brownies with chocolate chunks.</p>
+            <div class="price">Rs.250</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="panna cotta.jpg" alt="Panna Cotta">
+            <h2>Panna Cotta</h2>
+            <p>Italian creamy dessert topped with a berry compote.</p>
+            <div class="price">Rs.350</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="lemon bars.jpg" alt="Lemon Bars">
+            <h2>Lemon Bars</h2>
+            <p>Tart lemon filling on a buttery shortbread crust.</p>
+            <div class="price">Rs.400</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="cookies.jpg" alt="Cookies">
+            <h2>Cookies</h2>
+            <p>Freshly baked cookies with chocolate chips and nuts.</p>
+            <div class="price">Rs.150</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="icecream.jpg" alt="Ice Cream">
+            <h2>Ice Cream</h2>
+            <p>Creamy and smooth ice cream in various flavors.</p>
+            <div class="price">Rs.200</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="cupcakes.jpg" alt="Cupcakes">
+            <h2>Cupcakes</h2>
+            <p>Delicious mini cakes with a variety of toppings.</p>
+            <div class="price">Rs.200</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="popsicles.jpg" alt="Popsicles">
+            <h2>Popsicles</h2>
+            <p>Refreshing frozen treats in fruity flavors.</p>
+            <div class="price">Rs.150</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="rice pudding.jpg" alt="Rice Pudding">
+            <h2>Rice Pudding</h2>
+            <p>Comforting rice pudding with a hint of vanilla.</p>
+            <div class="price">Rs.200</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="bread pudding.jpg" alt="Bread Pudding">
+            <h2>Bread Pudding</h2>
+            <p>Warm bread pudding with a caramel sauce.</p>
+            <div class="price">Rs.300</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="apple pie.jpg" alt="Apple Pie">
+            <h2>Apple Pie</h2>
+            <p>Classic apple pie with a flaky crust and spiced apples.</p>
+            <div class="price">Rs.350</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="creme brulee.jpg" alt="Crème Brûlée">
+            <h2>Crème Brûlée</h2>
+            <p>Creamy vanilla custard with a crispy caramelized top.</p>
+            <div class="price">Rs.500</div>
+        </div>
+        
+        <div class="dessert-card">
+            <img src="mocha cake.jpg" alt="Mocha Cake">
+            <h2>Mocha Cake</h2>
+            <p>Rich chocolate and coffee-flavored cake with mocha frosting.</p>
+            <div class="price">Rs.450</div>
+        </div>
+        
+    </section>
+
+    <!-- Common Order Button -->
+    <div class="order-button-container">
+        <a href="OrderpageDesserts.html" 
+        class="order-button">Order from Desserts</a>
+    </div>
+</body>
+</html>

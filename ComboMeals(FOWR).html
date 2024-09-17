@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Meals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Light teal background */
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            background: url('hero_image.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .category {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .category h2 {
+            font-size: 2.5rem;
+            color: #00796b; /* Dark teal */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .category ul li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            transition: background-color 0.3s ease;
+        }
+        .category ul li:hover {
+            background-color: #f1f8e9; /* Light green */
+        }
+        .item-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        .item-info img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        .item-details {
+            max-width: 300px;
+        }
+        .item-name {
+            font-weight: bold;
+            display: block;
+            color: #00796b;
+            font-size: 1.2rem;
+        }
+        .item-description {
+            color: #555;
+        }
+        .item-price {
+            font-size: 1.5rem;
+            color: #004d40; /* Darker teal */
+            font-weight: bold;
+        }
+        .order-button {
+            display: block;
+            width: 220px;
+            margin: 30px auto;
+            padding: 15px;
+            text-align: center;
+            background-color: #004d40;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #00251a;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="batman">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Family Combos</h1>
+        </div>
+
+        <!-- Family Combos Category -->
+        <div class="category">
+            <h2>Family Combos</h2>
+            <ul>
+                <li>
+                    <div class="item-info">
+                        <img src="chicken food.jpg" alt="Roasted Chicken Gravy Combo">
+                        <div class="item-details">
+                            <span class="item-name">Roasted Chicken Gravy Combo (Full)</span><br>
+                            <span class="item-description">Roasted chicken served with rich gravy, mashed potatoes, and your choice of two sides.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1200</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Large Pizza Combo.jpg" alt="Large Pizza Combo">
+                        <div class="item-details">
+                            <span class="item-name">Large Pizza Combo</span><br>
+                            <span class="item-description">A large pizza with your choice of toppings, garlic bread, and a family-sized salad.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1000</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Burger Bonanza.jpg" alt="Burger Bonanza">
+                        <div class="item-details">
+                            <span class="item-name">Burger Bonanza</span><br>
+                            <span class="item-description">A variety of burgers, fries, and a large pitcher of soft drink.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹950</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Pasta Party.jpg" alt="Pasta Party">
+                        <div class="item-details">
+                            <span class="item-name">Pasta Party</span><br>
+                            <span class="item-description">A large pasta dish, garlic bread, and a mixed salad.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1100</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Mexican Fiesta.jpg" alt="Mexican Fiesta">
+                        <div class="item-details">
+                            <span class="item-name">Mexican Fiesta</span><br>
+                            <span class="item-description">Tacos, nachos, and a large serving of queso dip.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹900</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Chicken Tikka Masala Combo.jpg" alt="Chicken Tikka Masala Combo">
+                        <div class="item-details">
+                            <span class="item-name">Chicken Tikka Masala Combo</span><br>
+                            <span class="item-description">Tender chicken pieces cooked in a spiced tomato cream sauce, served with naan and rice.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1200</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Butter Chicken Combo.jpg" alt="Butter Chicken Combo">
+                        <div class="item-details">
+                            <span class="item-name">Butter Chicken Combo</span><br>
+                            <span class="item-description">Classic butter chicken with a side of basmati rice and garlic naan.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1150</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Paneer Tikka Combo.jpg" alt="Paneer Tikka Combo">
+                        <div class="item-details">
+                            <span class="item-name">Paneer Tikka Combo</span><br>
+                            <span class="item-description">Marinated paneer cubes grilled to perfection, served with mint chutney and naan.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1000</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Samosa Platter.jpg" alt="Samosa Platter">
+                        <div class="item-details">
+                            <span class="item-name">Samosa Platter</span><br>
+                            <span class="item-description">A platter of spicy samosas served with tamarind chutney and raita.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹700</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Chana Masala Combo.jpg" alt="Chana Masala Combo">
+                        <div class="item-details">
+                            <span class="item-name">Chana Masala Combo</span><br>
+                            <span class="item-description">Hearty chickpea curry served with steamed rice and a side of naan.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹900</div>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <img src="Grilled Fish Combo.jpg" alt="Grilled Fish Combo">
+                        <div class="item-details">
+                            <span class="item-name">Grilled Fish Combo</span><br>
+                            <span class="item-description">Grilled fish fillet served with roasted vegetables and a lemon butter sauce.</span>
+                        </div>
+                    </div>
+                    <div class="item-price">₹1400</div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Common Order Button -->
+        <a href="OrderPageCombos.html" target="_blank" class="order-button">Order Now</a>
+    </div>
+
+</body>
+</html>

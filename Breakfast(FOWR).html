@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast Menu</title>
+    <style>
+
+        /* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f7ff;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #ffb84d;
+    padding: 20px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: white;
+}
+
+.browse-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.breakfast-category {
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.breakfast-category h3 {
+    font-size: 2em;
+    color: #ff944d;
+    margin-bottom: 15px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    text-align: center;
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.item p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.order-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #ff944d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover,.browse-btn:hover {
+    background-color: #0c0c0c;
+}
+
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 90%;
+    }
+}
+html{
+    scroll-behavior: smooth;
+}
+.order-btn,.browse-btn{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Breakfast Menu</h1>
+        <a href="#batman" class="browse-btn">Browse</a>
+    </header>
+
+    <section class="breakfast-category" id="batman">
+        <h3>Continental Breakfast</h3>
+        <div class="menu-items">
+            <div class="item">
+                <img src="Pancakes with Syrup & Butter.jpg" alt="Pancakes">
+                <p>Pancakes with Syrup & Butter - ₹250</p>
+            </div>
+            <div class="item">
+                <img src="Scrambled Eggs with Toast.jpg" alt="Scrambled Eggs">
+                <p>Scrambled Eggs with Toast - ₹200</p>
+            </div>
+            <div class="item">
+                <img src="French Toast with Fresh Berries.jpg" alt="French Toast">
+                <p>French Toast with Fresh Berries - ₹220</p>
+            </div>
+            <div class="item">
+                <img src="Croissants with Jam & Butter.jpg" alt="Croissant">
+                <p>Croissants with Jam & Butter - ₹180</p>
+            </div>
+            <div class="item">
+                <img src="Fruit Salad with Yogurt & Granola.jpg" alt="Fruit Salad">
+                <p>Fruit Salad with Yogurt & Granola - ₹150</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="breakfast-category">
+        <h3>Indian Breakfast</h3>
+        <div class="menu-items">
+            <div class="item">
+                <img src="dosa.jpg" alt="Masala Dosa">
+                <p>Masala Dosa with Sambar & Chutney - ₹250</p>
+            </div>
+            <div class="item">
+                <img src="Poha with Peanuts & Lemon.jpg" alt="Poha">
+                <p>Poha with Peanuts & Lemon - ₹180</p>
+            </div>
+            <div class="item">
+                <img src="Aloo Paratha with Yogurt & Pickle.jpg" alt="Aloo Paratha">
+                <p>Aloo Paratha with Yogurt & Pickle - ₹220</p>
+            </div>
+            <div class="item">
+                <img src="Idli with Coconut Chutney & Sambar.jpg" alt="Idli">
+                <p>Idli with Coconut Chutney & Sambar - ₹150</p>
+            </div>
+            <div class="item">
+                <img src="meduwada.jpg" alt="Medu Wada">
+                <p>Wada dipped in Sambar with Coconut-chutney and mint-chutney - ₹200</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="breakfast-category">
+        <h3>Healthy Breakfast</h3>
+        <div class="menu-items">
+            <div class="item">
+                <img src="smoothie bowls.jpg" alt="Smoothie Bowl">
+                <p>Smoothie Bowls (Acai, Banana, or Mixed Berry) - ₹300</p>
+            </div>
+            <div class="item">
+                <img src="Oats with Chia Seeds, Honey & Fruits.jpg" alt="Oats">
+                <p>Oats with Chia Seeds, Honey & Fruits - ₹250</p>
+            </div>
+            <div class="item">
+                <img src="Avocado Toast with Poached Egg.jpg" alt="Avocado Toast">
+                <p>Avocado Toast with Poached Egg - ₹280</p>
+            </div>
+            <div class="item">
+                <img src="Greek Yogurt with Mixed Nuts & Honey.jpg" alt="Greek Yogurt">
+                <p>Greek Yogurt with Mixed Nuts & Honey - ₹220</p>
+            </div>
+            <div class="item">
+                <img src="Whole Grain Wrap with Hummus & Veggies.jpg" alt="Grain Wrap">
+                <p>Whole Grain Wrap with Hummus & Veggies - ₹270</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="OrderPageBreakfast.html"  target="_blank"
+    class="order-btn">
+        Order from Breakfast Menu</a>
+</body>
+</html>

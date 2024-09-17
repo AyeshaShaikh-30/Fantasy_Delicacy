@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beverages</title>
+    <style>
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .order-button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        main {
+            padding: 20px;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .category h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .beverage-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .beverage-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .beverage-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .beverage-item h3 {
+            margin: 10px 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        .beverage-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+        footer {
+            background-color: #4a90e2;
+            padding: 20px;
+            text-align: center;
+        }
+        .checkout-button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+        .checkout-button:hover, .order-button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beverages</h1>
+        <a href="#juices" class="checkout-button">Browse Beverages</a>
+    </header>
+    <main>
+        <section class="category" id="juices">
+            <h2>Juices</h2>
+            <div class="beverage-container">
+                <div class="beverage-item">
+                    <img src="apple juice.jpg" alt="Apple Juice">
+                    <h3>Apple Juice</h3>
+                    <p>₹100.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="orange juice.jpg" alt="Orange Juice">
+                    <h3>Orange Juice</h3>
+                    <p>₹100.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="carrot juice.jpg" alt="Carrot Juice">
+                    <h3>Carrot Juice</h3>
+                    <p>₹80.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="mango juice.jpg" alt="Mango Juice">
+                    <h3>Mango Juice</h3>
+                    <p>₹100.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="grape juice.jpg" alt="Grape Juice">
+                    <h3>Grape Juice</h3>
+                    <p>₹100.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="pineapple juice.jpg" alt="Pineapple Juice">
+                    <h3>Pineapple Juice</h3>
+                    <p>₹120.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="hot-beverages">
+            <h2>Hot Beverages</h2>
+            <div class="beverage-container">
+                <div class="beverage-item">
+                    <img src="coffee.jpg" alt="Coffee">
+                    <h3>Coffee</h3>
+                    <p>₹80.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="tea.jpg" alt="Tea">
+                    <h3>Tea</h3>
+                    <p>₹40.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="latte.jpg" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>₹120.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="cappuccino.jpg" alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>₹130.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="hot chocolate.jpg" alt="Hot Chocolate">
+                    <h3>Hot Chocolate</h3>
+                    <p>₹130.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="espresso.jpg" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>₹140.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="smoothies">
+            <h2>Smoothies</h2>
+            <div class="beverage-container">
+                <div class="beverage-item">
+                    <img src="berry smoothie.jpg" alt="Berry Smoothie">
+                    <h3>Berry Smoothie</h3>
+                    <p>₹200.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="banana smoothie.jpg" alt="Banana Smoothie">
+                    <h3>Banana Smoothie</h3>
+                    <p>₹200.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="mango smoothie.jpg" alt="Mango Smoothie">
+                    <h3>Mango Smoothie</h3>
+                    <p>₹200.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="green smoothie.jpg" alt="Green Smoothie">
+                    <h3>Green Smoothie</h3>
+                    <p>₹230.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="pineapple smoothie.jpg" alt="Pineapple Smoothie">
+                    <h3>Pineapple Smoothie</h3>
+                    <p>₹240.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="detox smoothie.jpg" alt="Detox Smoothie">
+                    <h3>Detox Smoothie</h3>
+                    <p>₹250.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="specialty-beverages">
+            <h2>Specialty Beverages</h2>
+            <div class="beverage-container">
+                <div class="beverage-item">
+                    <img src="iced tea.jpg" alt="Iced Tea">
+                    <h3>Iced Tea</h3>
+                    <p>₹120.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="lemonade.jpg" alt="Lemonade">
+                    <h3>Lemonade</h3>
+                    <p>₹90.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="fruitpunch.jpg" alt="Fruit Punch">
+                    <h3>Fruit Punch</h3>
+                    <p>₹150.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="cucumber mint.jpg" alt="Cucumber Mint">
+                    <h3>Cucumber Mint</h3>
+                    <p>₹160.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="hibuscus tea.jpg" alt="Hibiscus Tea">
+                    <h3>Hibiscus Tea</h3>
+                    <p>₹130.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="ginger lemon.jpg" alt="Ginger Lemon">
+                    <h3>Ginger Lemon</h3>
+                    <p>₹110.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="category" id="other-beverages">
+            <h2>Other Beverages</h2>
+            <div class="beverage-container">
+                <div class="beverage-item">
+                    <img src="iced coffe.jpg" alt="Iced Coffee">
+                    <h3>Iced Coffee</h3>
+                    <p>₹200.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="chai latte.jpg" alt="Chai Latte">
+                    <h3>Chai Latte</h3>
+                    <p>₹220.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="soy milk.jpg" alt="Soy Milk">
+                    <h3>Soy Milk</h3>
+                    <p>₹180.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="oat milk.jpg" alt="Oat Milk">
+                    <h3>Oat Milk</h3>
+                    <p>₹120.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="aleovera juice.jpg" alt="Aloe Vera Juice">
+                    <h3>Aloe Vera Juice</h3>
+                    <p>₹150.00</p>
+                </div>
+                <div class="beverage-item">
+                    <img src="coconut water.jpg" alt="Coconut Water">
+                    <h3>Coconut Water</h3>
+                    <p>₹80.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="OrderPageBeverages.html" class="order-button" target="_blank">Order Beverages</a>
+    </footer>
+</body>
+</html>

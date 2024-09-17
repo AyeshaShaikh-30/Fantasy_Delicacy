@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 8px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .order-page {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #ff6f61;
+            font-size: 24px;
+        }
+        .form-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            font-size: 18px;
+            color: #333;
+            flex: 2;
+        }
+        .item-price {
+            font-size: 18px;
+            color: #ff6f61;
+            text-align: right;
+            flex: 1;
+        }
+        .item-quantity {
+            flex: 1;
+            text-align: right;
+        }
+        .item-quantity input {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .summary {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .order-button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: #ff3d34;
+        }
+        .back-button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #ccc;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        .thank-you {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Breakfast</h1>
+    </header>
+
+    <div class="container">
+        <div class="order-page">
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="text" id="address" placeholder="Your Address">
+                <input type="text" id="contact" placeholder="Contact Number">
+            </div>
+
+            <h2>Continental Breakfast</h2>
+            <div id="continental-items"></div>
+
+            <h2>Indian Breakfast</h2>
+            <div id="indian-items"></div>
+
+            <h2>Healthy Breakfast</h2>
+            <div id="healthy-items"></div>
+
+            <div class="summary">
+                <h3>Order Summary</h3>
+                <div id="summary-items"></div>
+                <div class="summary-item">
+                    <strong>Total:</strong> 
+                    <span id="total-amount">₹0</span>
+                </div>
+            </div>
+
+            <button class="order-button" onclick="placeOrder()">Place Order</button>
+            <a class="back-button" target="_blank"
+             href="Breakfast(FOWR).html">Back to Menu</a>
+        </div>
+    </div>
+
+    <div class="thank-you">
+        Thank you for choosing us!
+    </div>
+
+    <script>
+        const continentalItems = [
+            { name: 'Pancakes', price: 250 },
+            { name: 'Scrambled Eggs', price: 200 },
+            { name: 'French Toast', price: 220 },
+            { name: 'Croissants', price: 180 },
+            { name: 'Fruit Salad', price: 150 }
+        ];
+
+        const indianItems = [
+            { name: 'Masala Dosa with Sambar & Chutney', price: 250 },
+            { name: 'Poha', price: 180 },
+            { name: 'Aloo Paratha', price: 220 },
+            { name: 'Idli', price: 150 },
+            { name: 'Medu Wada', price: 200 }
+        ];
+
+        const healthyItems = [
+            { name: 'Smoothie Bowl', price: 300 },
+            { name: 'Oats', price: 250 },
+            { name: 'Avocado Toast', price: 280 },
+            { name: 'Greek Yogurt', price: 220 },
+            { name: 'Grain Wrap', price: 270 }
+        ];
+
+        function renderMenu(category, items) {
+            const container = document.getElementById(category);
+            container.innerHTML = items.map((item, index) => `
+                <div class="item">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-price">₹${item.price}</div>
+                    <div class="item-quantity">
+                        <input type="number" id="quantity-${category}-${index}" min="0" value="0" onchange="updateSummary()">
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateSummary() {
+            const summaryContainer = document.getElementById('summary-items');
+            const totalAmountElement = document.getElementById('total-amount');
+            let totalAmount = 0;
+
+            const allItems = [
+                ...continentalItems.map((item, index) => ({ ...item, category: 'continental', index })),
+                ...indianItems.map((item, index) => ({ ...item, category: 'indian', index })),
+                ...healthyItems.map((item, index) => ({ ...item, category: 'healthy', index }))
+            ];
+
+            summaryContainer.innerHTML = allItems.map(item => {
+                const quantity = parseInt(document.getElementById(`quantity-${item.category}-${item.index}`).value, 10);
+                if (quantity > 0) {
+                    const itemTotal = item.price * quantity;
+                    totalAmount += itemTotal;
+                    return `
+                        <div class="summary-item">
+                            <span>${item.name}</span>
+                            <span>₹${itemTotal} (${quantity} x ₹${item.price})</span>
+                        </div>
+                    `;
+                }
+                return '';
+            }).join('');
+
+            totalAmountElement.textContent = `₹${totalAmount}`;
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!');
+        }
+
+        // Initialize the menu
+        renderMenu('continental-items', continentalItems);
+        renderMenu('indian-items', indianItems);
+        renderMenu('healthy-items', healthyItems);
+    </script>
+</body>
+</html>

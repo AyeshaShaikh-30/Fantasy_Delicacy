@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Light grey background */
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            color: #f18604;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .category {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .salad-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 280px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .salad-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .salad-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .salad-card h3 {
+            font-size: 1.5rem;
+            color: #4caf50; /* Green */
+            margin: 0 0 10px;
+        }
+        .salad-card p {
+            color: #555;
+            margin: 0 0 15px;
+        }
+        .salad-card .price {
+            font-size: 1.3rem;
+            color: #388e3c; /* Darker green */
+            font-weight: bold;
+        }
+        .order-button {
+            display: block;
+            width: 220px;
+            margin: 30px auto;
+            padding: 15px;
+            text-align: center;
+            background-color: #388e3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #2c6b2f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="batman">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Fresh Salads</h1>
+            <h3>Enjoy a refreshing blend of crisp, 
+                garden-fresh vegetables and greens in 
+                our thoughtfully crafted salad. 
+                Each bowl is a colorful mix of 
+                hand-selected ingredients, including 
+                crunchy lettuce, juicy tomatoes, and 
+                crisp cucumbers, complemented by a 
+                selection of premium toppings and 
+                dressings. Whether you prefer a classic
+                 Caesar, a vibrant Greek, or a hearty
+                  mixed greens variety, our salad offers
+                   a delicious and nutritious choice for 
+                   any meal. Perfect as a light lunch or 
+                   a side dish, it’s a wholesome option 
+                   packed with flavor and freshness.</h3>
+        </div>
+
+        <!-- Salads Category -->
+        <div class="category">
+            <div class="salad-card">
+                <img src="salad.jpg" alt="Golden Roasted Salad">
+                <h3>Golden Roasted Salad (Large)</h3>
+                <p>A hearty mix of roasted golden vegetables, fresh greens, and a light vinaigrette.</p>
+                <div class="price">₹600</div>
+            </div>
+            
+            <div class="salad-card">
+                <img src="salads.jpg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Crisp cucumbers, tomatoes, olives, and feta cheese tossed with oregano and olive oil.</p>
+                <div class="price">₹300</div>
+            </div>
+            <div class="salad-card">
+                <img src="ceaser salad.jpg" alt="Caesar Salad">
+                <h3>Caesar Salad</h3>
+                <p>Classic Caesar with romaine lettuce, croutons, Parmesan cheese, and Caesar dressing.</p>
+                <div class="price">₹300</div>
+            </div>
+            <div class="salad-card">
+                <img src="Cobb Salad.jpg" alt="Cobb Salad">
+                <h3>Cobb Salad</h3>
+                <p>A protein-packed salad with chicken, bacon, eggs, avocado, and blue cheese.</p>
+                <div class="price">₹350</div>
+            </div>
+            <div class="salad-card">
+                <img src="Caprese Salad.jpg" alt="Caprese Salad">
+                <h3>Caprese Salad</h3>
+                <p>Fresh tomatoes, mozzarella cheese, and basil drizzled with balsamic glaze.</p>
+                <div class="price">₹350</div>
+            </div>
+            <div class="salad-card">
+                <img src="Asian slaw.jpg" alt="Asian Slaw">
+                <h3>Asian Slaw</h3>
+                <p>Crunchy slaw with a tangy Asian dressing and topped with sesame seeds.</p>
+                <div class="price">₹300</div>
+            </div>
+        </div>
+
+        <!-- Common Order Button -->
+        <a href="OrderPageSalads.html" target="_blank"
+         class="order-button">Order Now</a>
+    </div>
+
+</body>
+</html>

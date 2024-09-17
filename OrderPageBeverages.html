@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beverages Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #00796b; /* Teal header */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #00796b;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .item-selection, .order-summary {
+            margin-top: 20px;
+        }
+
+        .item-list {
+            margin-bottom: 20px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .item h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity input {
+            width: 60px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .order-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .order-summary li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .order-summary p {
+            font-weight: bold;
+        }
+
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .btn-order {
+            background-color: #00796b;
+            color: white;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: #00796b;
+            border: 2px solid #00796b;
+            text-decoration: none;
+        }
+.btn-back:hover{
+    background-color: black;
+}
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #00796b;
+            color: white;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+                max-width: 100%;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .item-list {
+                flex-direction: column;
+            }
+
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quantity input {
+                width: 50px;
+            }
+        }
+
+        .foot {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Beverages</h1>
+    </header>
+
+    <div class="container">
+        <section class="personal-info">
+            <h2>Personal Information</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Name:*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:*</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:*</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+            </form>
+        </section>
+
+        <section class="item-selection">
+            <h2>Select Beverages</h2>
+            <div class="item-list" id="beverages-list"></div>
+        </section>
+
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-summary-list"></ul>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Amount: ₹<span id="total-amount">0.00</span></p>
+        </section>
+
+        <section class="actions">
+            <button type="button"
+             class="btn-order" onclick="submitOrder()">
+             Submit Order</button>
+
+             <a href="Beverages(FOWR).html" 
+            target="_blank"
+            class="btn-back">Back to Menu</a>
+        </section>
+    </div>
+
+    <footer>
+        <p class="foot">Thank you for choosing us!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const beverages = {
+                juices: [
+                    { name: 'Apple Juice', price: 100 },
+                    { name: 'Orange Juice', price: 100 },
+                    { name: 'Carrot Juice', price: 80 },
+                    { name: 'Mango Juice', price: 100 },
+                    { name: 'Grape Juice', price: 100 },
+                    { name: 'Pineapple Juice', price: 120 }
+                ],
+                hotBeverages: [
+                    { name: 'Coffee', price: 80 },
+                    { name: 'Tea', price: 40 },
+                    { name: 'Latte', price: 120 },
+                    { name: 'Cappuccino', price: 130 },
+                    { name: 'Hot Chocolate', price: 130 },
+                    { name: 'Espresso', price: 140 }
+                ],
+                specialtyBeverages: [
+                    { name: 'Iced Tea', price: 120 },
+                    { name: 'Lemonade', price: 90 },
+                    { name: 'Fruit Punch', price: 150 },
+                    { name: 'Cucumber Mint', price: 160 },
+                    { name: 'Hibiscus Tea', price: 130 },
+                    { name: 'Ginger Lemon', price: 110 }
+                ],
+                smoothies: [
+                    { name: 'Berry Smoothie', price: 200 },
+                    { name: 'Banana Smoothie', price: 200 },
+                    { name: 'Mango Smoothie', price: 200 },
+                    { name: 'Green Smoothie', price: 230 },
+                    { name: 'Pineapple Smoothie', price: 240 },
+                    { name: 'Detox Smoothie', price: 250 }
+                ],
+                otherBeverages: [
+                    { name: 'Iced Coffee', price: 200 },
+                    { name: 'Chai Latte', price: 220 },
+                    { name: 'Soy Milk', price: 180 },
+                    { name: 'Oat Milk', price: 120 },
+                    { name: 'Aloe Vera Juice', price: 150 },
+                    { name: 'Coconut Water', price: 80 }
+                ]
+            };
+
+            const itemPrices = {};
+            const beveragesList = document.getElementById('beverages-list');
+
+            const addBeverageCategory = (categoryName, beverages) => {
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.textContent = categoryName;
+                beveragesList.appendChild(categoryTitle);
+
+                beverages.forEach(beverage => {
+                    const itemId = beverage.name.toLowerCase().replace(/\s+/g, '-');
+                    itemPrices[itemId] = beverage.price;
+
+                    const item = document.createElement('div');
+                    item.classList.add('item');
+                    item.innerHTML = `
+                        <div>
+                            <h3>${beverage.name}</h3>
+                            <p>₹${beverage.price}</p>
+                        </div>
+                        <div class="quantity">
+                            <input type="number" id="quantity-${itemId}" value="0" min="0" onchange="updateOrder('${itemId}', ${beverage.price}, this.value)">
+                            <label for="quantity-${itemId}">Qty</label>
+                        </div>
+                    `;
+                    beveragesList.appendChild(item);
+                });
+            };
+
+            addBeverageCategory('Juices', beverages.juices);
+            addBeverageCategory('Hot Beverages', beverages.hotBeverages);
+            addBeverageCategory('Speciality Beverages', beverages.specialtyBeverages);
+            addBeverageCategory('Smoothies', beverages.smoothies);
+            addBeverageCategory('Other Beverages', beverages.otherBeverages);
+        });
+
+        let orderSummary = {};
+        let totalItems = 0;
+        let totalAmount = 0;
+
+        const updateOrder = (itemId, itemPrice, quantity) => {
+            const qty = parseInt(quantity, 10);
+            if (qty > 0) {
+                orderSummary[itemId] = { quantity: qty, price: itemPrice };
+            } else {
+                delete orderSummary[itemId];
+            }
+            calculateTotal();
+        };
+
+        const calculateTotal = () => {
+            const orderSummaryList = document.getElementById('order-summary-list');
+            orderSummaryList.innerHTML = '';
+            totalItems = 0;
+            totalAmount = 0;
+
+            Object.keys(orderSummary).forEach(itemId => {
+                const item = orderSummary[itemId];
+                totalItems += item.quantity;
+                totalAmount += item.quantity * item.price;
+
+                const orderItem = document.createElement('li');
+                orderItem.textContent = `${itemId.replace(/-/g, ' ')} x ${item.quantity} - ₹${item.quantity * item.price}`;
+                orderSummaryList.appendChild(orderItem);
+            });
+
+            document.getElementById('total-items').textContent = totalItems;
+            document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+        };
+
+        const submitOrder = () => {
+            if (totalItems === 0) {
+                alert('Please select at least one beverage.');
+                return;
+            }
+
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const address = document.getElementById('address').value;
+
+            if (!name || !contact || !address) {
+                alert('Please fill out all the required fields.');
+                return;
+            }
+
+            alert(`Thank you for your order, 
+            ${name}! Your total is 
+            ₹${totalAmount.toFixed(2)}.`);
+        };
+    </script>
+</body>
+</html>

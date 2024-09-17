@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Options Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #00796b;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .order-page {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .order-page h1 {
+            color: #00796b;
+            font-size: 24px;
+        }
+        .form-section, .item, .summary {
+            margin-bottom: 20px;
+        }
+        .form-section input, .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            font-size: 18px;
+            flex: 2;
+        }
+        .item-price {
+            font-size: 18px;
+            color: #00796b;
+            text-align: right;
+            flex: 1;
+        }
+        .item-quantity {
+            flex: 1;
+            text-align: right;
+        }
+        .item-quantity input {
+            width: 60px;
+            text-align: center;
+        }
+        .summary {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .order-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background: #004d40;
+        }
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #ccc;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background: #bbb;
+        }
+        .thank-you {
+            text-align: center;
+            padding: 10px;
+            color: #00796b;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Your Healthy Options</h1>
+    </header>
+    <div class="container">
+        <div class="order-page">
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="address" placeholder="Address">
+                <input type="text" id="contact" placeholder="Contact Number">
+            </div>
+            
+            <h2>Grain Bowls</h2>
+            <div id="grain-bowls"></div>
+            
+            <h2>Healthy Snacks</h2>
+            <div id="healthy-snacks"></div>
+
+            <h2>Wraps and Sandwiches</h2>
+            <div id="wraps-sandwiches"></div>
+
+            <div class="summary">
+                <h3>Order Summary</h3>
+                <div id="summary-items"></div>
+                <div class="summary-item">
+                    <strong>Total:</strong> 
+                    <span id="total-amount">₹0</span>
+                </div>
+            </div>
+            <button class="order-button" onclick="placeOrder()">Place Order</button>
+            <a class="back-button" 
+            target="_blank" 
+            href="HealthyOptions(FOWR).html">
+            Back to Menu</a>
+        </div>
+    </div>
+    <div class="thank-you">
+        Thank you for choosing us!
+    </div>
+
+    <script>
+        const grainBowls = [
+            { name: 'Quinoa & Black Bean Bowl', price: 200 },
+            { name: 'Mediterranean Grain Bowl', price: 250 },
+            { name: 'Teriyaki Chicken Bowl', price: 250 },
+            { name: 'Sweet Potato & Kale Bowl', price: 300 },
+            { name: 'Asian Sesame Bowl', price: 250 },
+            { name: 'Spicy Lentil Bowl', price: 250 }
+        ];
+
+        const healthySnacks = [
+            { name: 'Greek Yogurt & Fruit Parfait', price: 300 },
+            { name: 'Veggie Sticks & Hummus', price: 300 },
+            { name: 'Chia Seed Pudding', price: 200 },
+            { name: 'Almond & Coconut Energy Balls', price: 250 },
+            { name: 'Apple Slices with Almond Butter', price: 300 },
+            { name: 'Edamame Beans', price: 250 }
+        ];
+
+        const wrapsSandwiches = [
+            { name: 'Turkey & Avocado Wrap', price: 350 },
+            { name: 'Hummus & Veggie Wrap', price: 300 },
+            { name: 'Chicken Caesar Wrap', price: 300 },
+            { name: 'Caprese Sandwich', price: 280 },
+            { name: 'Tuna Salad Sandwich', price: 300 },
+            { name: 'Veggie & Hummus Sandwich', price: 350 }
+        ];
+
+        function renderCategory(category, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = category.map((item, index) => `
+                <div class="item">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-price">₹${item.price}</div>
+                    <div class="item-quantity">
+                        <input type="number" id="${containerId}-quantity-${index}" min="0" value="0" onchange="updateSummary()">
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateSummary() {
+            const summaryContainer = document.getElementById('summary-items');
+            const totalAmountElement = document.getElementById('total-amount');
+            let totalAmount = 0;
+
+            const allItems = [...grainBowls, ...healthySnacks, ...wrapsSandwiches];
+            const containers = ['grain-bowls', 'healthy-snacks', 'wraps-sandwiches'];
+            summaryContainer.innerHTML = '';
+
+            containers.forEach((containerId, i) => {
+                allItems.slice(i * 6, i * 6 + 6).forEach((item, index) => {
+                    const quantity = parseInt(document.getElementById(`${containerId}-quantity-${index}`).value, 10);
+                    if (quantity > 0) {
+                        const itemTotal = item.price * quantity;
+                        totalAmount += itemTotal;
+                        summaryContainer.innerHTML += `
+                            <div class="summary-item">
+                                <span>${item.name}</span>
+                                <span>₹${itemTotal} (${quantity} x ₹${item.price})</span>
+                            </div>
+                        `;
+                    }
+                });
+            });
+
+            totalAmountElement.textContent = `₹${totalAmount}`;
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!');
+        }
+
+        renderCategory(grainBowls, 'grain-bowls');
+        renderCategory(healthySnacks, 'healthy-snacks');
+        renderCategory(wrapsSandwiches, 'wraps-sandwiches');
+    </script>
+</body>
+</html>

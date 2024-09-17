@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salad Order Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8e4; /* Light greenish background */
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            padding-top: 20px;
+        }
+        header {
+            background: #0e3b44; /* Dark green header */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .order-page {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .form-section input {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+        }
+        .category-title {
+            background-color: #72eaf8;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .menu-item .item-name {
+            font-size: 18px;
+            flex: 1; /* Ensure the name takes up available space */
+        }
+        .menu-item .item-price {
+            font-size: 18px;
+            color: #022729;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        .menu-item .item-quantity {
+            flex-basis: 120px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .menu-item input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+        }
+        .summary {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .total-amount {
+            font-size: 22px;
+            font-weight: bold;
+            color: #02495d;
+        }
+        .order-button {
+            width: 100%;
+            background-color: #034d56;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .order-button:hover {
+            background-color: #00656f;
+        }
+        .back-button {
+            width: 100%;
+            background-color: #a1a1a1;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #828282;
+        }
+        .thank-you {
+            text-align: center;
+            padding: 10px;
+            color: #0a3ef8;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Order Your Favorite Salad</h1>
+</header>
+
+<div class="container">
+    <div class="order-page">
+        <!-- Contact Information -->
+        <div class="form-section">
+            <h2>Contact Information</h2>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="text" id="address" placeholder="Your Address">
+            <input type="text" id="contact" placeholder="Contact Number">
+        </div>
+
+        <!-- Salad Category -->
+        <div class="category-title">Salads</div>
+        <div id="menu-items"></div>
+
+        <!-- Order Summary -->
+        <div class="summary">
+            <h3>Order Summary</h3>
+            <div id="summary-items"></div>
+            <div class="summary-item">
+                <strong>Total:</strong> 
+                <span class="total-amount" id="total-amount">₹0</span>
+            </div>
+        </div>
+
+        <!-- Order and Back Buttons -->
+        <button class="order-button" onclick="placeOrder()">Place Order</button>
+        <a class="back-button" target="_blank"
+        href="Salads(FOWR).html" >Back to Menu</a>
+    </div>
+</div>
+
+<div class="thank-you">
+    Thank you for choosing us!
+</div>
+
+<script>
+    const items = [
+        { name: 'Golden Roasted Salad (Large)', price: 600 },
+        { name: 'Golden Roasted Salad (Medium)', price: 400 },
+        { name: 'Greek Salad', price: 300 },
+        { name: 'Caesar Salad', price: 300 },
+        { name: 'Cobb Salad', price: 350 },
+        { name: 'Caprese Salad', price: 350 },
+        { name: 'Asian Slaw', price: 300 }
+    ];
+
+    function renderMenu() {
+        const menuContainer = document.getElementById('menu-items');
+        menuContainer.innerHTML = items.map((item, index) => `
+            <div class="menu-item">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price">₹${item.price}</div>
+                <div class="item-quantity">
+                    <input type="number" id="quantity-${index}" min="0" value="0" onchange="updateSummary()">
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function updateSummary() {
+        const summaryContainer = document.getElementById('summary-items');
+        const totalAmountElement = document.getElementById('total-amount');
+        let totalAmount = 0;
+
+        summaryContainer.innerHTML = items.map((item, index) => {
+            const quantity = parseInt(document.getElementById(`quantity-${index}`).value, 10);
+            if (quantity > 0) {
+                const itemTotal = item.price * quantity;
+                totalAmount += itemTotal;
+                return `
+                    <div class="summary-item">
+                        <span>${item.name}</span>
+                        <span>₹${itemTotal} (${quantity} x ₹${item.price})</span>
+                    </div>
+                `;
+            }
+            return '';
+        }).join('');
+
+        totalAmountElement.textContent = `₹${totalAmount}`;
+    }
+
+    function placeOrder() {
+        alert('Order placed successfully!');
+    }
+
+    // Initialize the menu
+    renderMenu();
+</script>
+
+</body>
+</html>

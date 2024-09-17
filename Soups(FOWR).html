@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soups</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f1; /* Soft green background */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            background: url('soups_hero_image_alt.jpg') no-repeat center center/cover;
+            color: #101010;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .category h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #4956ba; /* Deep green */
+            text-align: center;
+            font-weight: bold;
+        }
+        .soups-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .soup-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .soup-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .soup-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .soup-card h3 {
+            font-size: 1.6rem;
+            color: #3d299e; /* Dark green */
+            margin: 0 0 10px;
+        }
+        .soup-card p {
+            color: #555;
+            margin: 0 0 15px;
+        }
+        .soup-card .price {
+            font-size: 1.4rem;
+            color: #03e0f5; /* Dark red */
+            font-weight: bold;
+        }
+        .order-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            text-align: center;
+            background-color: #300fe9; /* Deep green */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #020005; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Delicious Soups</h1>
+            <h3>Savor our selection of hearty
+                 and flavorful soups. From comforting 
+                 classics to creamy indulgences,
+                  each bowl is crafted with fresh 
+                  ingredients to provide a deliciously
+                   satisfying experience.
+
+            </h3>
+        </div>
+
+        <!-- Classic Soups Category -->
+        <div class="category">
+            <h2>Classic Soups</h2>
+            <div class="soups-list">
+                <div class="soup-card">
+                    <img src="Chicken Noodle Soup.jpg" alt="Chicken Noodle Soup">
+                    <h3>Chicken Noodle Soup</h3>
+                    <p>A comforting classic with tender chicken, noodles, and fresh vegetables in a savory broth.</p>
+                    <div class="price">₹250</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Tomato Basil Soup.jpg" alt="Tomato Basil Soup">
+                    <h3>Tomato Basil Soup</h3>
+                    <p>Rich and creamy tomato soup with a hint of basil, perfect for a cozy meal.</p>
+                    <div class="price">₹200</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Minestrone.jpg" alt="Minestrone">
+                    <h3>Minestrone</h3>
+                    <p>A hearty Italian soup with beans, vegetables, and pasta in a flavorful tomato broth.</p>
+                    <div class="price">₹220</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Vegetable Soup.jpg" alt="Vegetable Soup">
+                    <h3>Vegetable Soup</h3>
+                    <p>Loaded with fresh, crisp vegetables and a savory broth, this soup is both healthy and delicious.</p>
+                    <div class="price">₹180</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Beef Barley Soup.jpg" alt="Beef Barley Soup">
+                    <h3>Beef Barley Soup</h3>
+                    <p>Hearty beef soup with barley, carrots, and celery in a rich, flavorful broth.</p>
+                    <div class="price">₹270</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Lentil Soup.jpg" alt="Lentil Soup">
+                    <h3>Lentil Soup</h3>
+                    <p>Nutritious lentil soup with a blend of vegetables and spices, perfect for a satisfying meal.</p>
+                    <div class="price">₹200</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creamy Soups Category -->
+        <div class="category">
+            <h2>Creamy Soups</h2>
+            <div class="soups-list">
+                <div class="soup-card">
+                    <img src="cream of mushroo.jpg" alt="Cream of Mushroom">
+                    <h3>Cream of Mushroom</h3>
+                    <p>A velvety smooth mushroom soup with a rich, earthy flavor that's both comforting and satisfying.</p>
+                    <div class="price">₹250</div>
+                </div>
+                <div class="soup-card">
+                    <img src="New England Clam Chowder.jpg" alt="New England Clam Chowder">
+                    <h3>New England Clam Chowder</h3>
+                    <p>Creamy chowder with tender clams, potatoes, and a touch of thyme, served piping hot.</p>
+                    <div class="price">₹300</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Potato Leek Soup.jpg" alt="Potato Leek Soup">
+                    <h3>Potato Leek Soup</h3>
+                    <p>A rich and creamy soup made with potatoes and leeks, seasoned with herbs for a comforting taste.</p>
+                    <div class="price">₹250</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Butternut Squash Soup.jpg" alt="Butternut Squash Soup">
+                    <h3>Butternut Squash Soup</h3>
+                    <p>A sweet and creamy soup made with roasted butternut squash and a blend of warm spices.</p>
+                    <div class="price">₹270</div>
+                </div>
+                <div class="soup-card">
+                    <img src="Lobster Bisque.jpg" alt="Lobster Bisque">
+                    <h3>Lobster Bisque</h3>
+                    <p>A luxurious bisque with lobster meat, cream, and a touch of brandy for a rich and indulgent experience.</p>
+                    <div class="price">₹350</div>
+                </div>
+                <div class="soup-card">
+                    <img src="cream of asparagus.jpg" alt="Cream of Asparagus">
+                    <h3>Cream of Asparagus</h3>
+                    <p>A light and creamy soup with tender asparagus and a hint of garlic for a deliciously smooth flavor.</p>
+                    <div class="price">₹280</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Order Button -->
+        <a href="OrderPageSoups.html" target="_blank" 
+        class="order-button">Order Now</a>
+    </div>
+
+</body>
+</html>
