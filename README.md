@@ -6,8 +6,11 @@ Whether you're craving something exotic or just want to browse through a world o
 🌟Features
 
 Elegant and User-Friendly Interface: Designed for smooth navigation and ease of use.
+
 Extensive Menu: Browse through a range of carefully curated dishes with vibrant descriptions.
+
 Simple Ordering Process: Add items to your cart and place orders effortlessly.
+
 Responsive Design: Optimized for mobile and desktop to ensure a seamless experience on any device.
 
 🛠️ Technologies Used
