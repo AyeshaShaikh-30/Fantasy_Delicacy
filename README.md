@@ -1,4 +1,4 @@
-#🍽️Fantasy Delicacy
+# 🍽️Fantasy Delicacy
 
 Fantasy Delicacy is a web-based food ordering platform that brings the world of fantasy-inspired, gourmet delicacies to users.
 Whether you're craving something exotic or just want to browse through a world of imaginative dishes, Fantasy Delicacy is designed to provide a magical culinary experience.
