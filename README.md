@@ -25,19 +25,24 @@ Installation:
 
 1)Clone the repository
 git clone https://github.com/AyeshaShaikh-30/Fantasy_Delicacy.git
+
 2)Navigate to the project directory:
 cd Fantasy_Delicacy
+
 3)Open index.html in your preferred web browser to view the site locally.
 
 🎮 Usage
 
 Browsing: Users can explore a selection of fantasy-inspired meals with full descriptions.
+
 Ordering: Add items to your cart and proceed to checkout with a streamlined order form.
 
 🚧 Future Enhancements
 
 Backend Integration: Implement server-side functionality for order management and user authentication.
+
 Payment Gateway Integration: Enable online payments for a more complete ordering experience.
+
 User Reviews: Allow users to leave reviews and ratings on dishes.
 
 🤝 Contributing
