@@ -22,8 +22,11 @@ JavaScript for interactivity and dynamic content
 🚀Getting Started
 
 To get a local copy of Fantasy Delicacy up and running, follow these simple steps.
+
 Prerequisites:
+
 Ensure you have Git installed on your machine.
+
 Installation:
 
 1)Clone the repository
